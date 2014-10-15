@@ -1,0 +1,708 @@
+\setcounter{chapter}{1}
+
+\chapter{数列极限与数值级数}
+
+\section{数列极限}
+
+\subsection{数列}
+
+{\bf 教材P45：}按一定规律排列的无穷多个（相同或不相同的）数，记作：
+$$a_1,a_2,\ldots,a_n,\ldots$$
+或者$\{a_n\}$。
+
+$\{a_n\}$的实质是定义在$\mathbb{N}_+$上的函数，即所谓的{\bf 整标函数}\ps{教材上的说法是“可视为”}，即
+$$a_n:\mathbb{N}_+\to\mathbb{R}$$
+
+{\bf 命题：}一个集合是可数的，当且仅当它可以表示为一个数列。
+
+{\bf 思考：}数列与集合有哪些区别？\ps{1、有序-无序；2、无限-可能有限；3、可重复-不可重复}
+
+{\bf 例：}数列举例
+
+\begin{enumerate}[(1)]
+  \setlength{\itemindent}{1cm}
+  \item[(1)] $\left\{\df{n+1}n\right\}:\df 21,\df 32,\df43,\df54,\df65,\ldots$
+  \item[(2)] $\left\{\df{(-1)^n}n\right\}:-1,\df12,-\df13,\df14,-\df15,\df16,\ldots$
+  \item[(3)] $\{n^2\}:1,4,9,16,25,36,\ldots$
+  \item[(4)] $\left\{n^{(-1)^n}\right\}:1,2,\df13,4,\df15,6,\ldots$
+\end{enumerate}
+
+\subsection{数列的极限}
+
+{\bf 极限：} 一种无限靠近的趋势 
+	
+\begin{enumerate}
+  \setlength{\itemindent}{1cm}
+  \item 对于数列而言，无限靠近的趋势意味着什么？ 
+  \item 如何从数学上严格表达这种趋势？ 
+\end{enumerate}
+
+{\bf 定义2.1.2} 
+
+对于数列$\{a_n\}$，若存在常数$a$，对于任意给定的正数$\e$，均存在正整数$N$，当$n>N$时，恒有
+$$|a_n-a|<\e$$
+成立，则称{\bf 数列$\{a_n\}$存在极限（或收敛）}，常数$a$称为该数列的极限，记为
+$$\lim_{n\to\infty}a_n=a$$
+或
+$$a_n\to a\;(n\to\infty)$$
+若上述常数$a$不存在，则称数列$\{a_n\}$不存在极限（或{\bf 发散}）。
+
+\begin{center}
+	\resizebox{!}{3cm}{\includegraphics{./images/ch2/lim-en/en1.jpg}}\quad
+	\resizebox{!}{3cm}{\includegraphics{./images/ch2/lim-en/en2.jpg}}
+	
+	\resizebox{!}{3cm}{\includegraphics{./images/ch2/lim-en/en3.jpg}}\quad
+	\resizebox{!}{3cm}{\includegraphics{./images/ch2/lim-en/en4.jpg}}
+	
+	\resizebox{!}{3cm}{\includegraphics{./images/ch2/lim-en/en5.jpg}}
+\end{center}
+
+等价说法：
+
+$$\lim_{n\to\infty}a_n=a\Leftrightarrow
+\forall\e>0,\exists N\in\mathbb{Z}_+,\forall n>N,|a_n-a|<\e\eqno{(1)}$$
+
+{\bf 讨论：}以下说法和$(1)$等价的是：
+
+\begin{enumerate}
+  \setlength{\itemindent}{1cm}
+%   \item[(2)] $\forall\e>0$，$\exists N>0$，$\forall
+%   n>N$，$|a_n-a|<\e$ \hfill{$\surd$}\\
+%   \hfill（直接写$\exists N$即可）
+  \item[(2)] $\forall\e>0$，$\exists N$，$\forall
+  n>N$，$|a_n-a|\leq\e$ \hfill{$\surd$} 
+  \item[(3)] $\exists N>0$，$\forall\e>0$，$\forall
+  n>N$，$|a_n-a|<\e$ \hfill{$\times$} 
+  \item[(4)] $\forall\e>0$，仅有有限多个$n$，使得$|a_n-a|\geq\e$
+  \hfill{$\surd$} 
+  \item[(5)] $\forall\e>0$，总有无穷多个$n$，使得$|a_n-a|<\e$
+  \hfill{$\times$} 
+  \item[(6)] $\forall\e>0$，要使$|a_n-a|<\e$，只须$n$充分大 \hfill{$\surd$}
+  \item[(7)] $\forall\e>0,\exists N\in\mathbb{N}_+,\forall
+  n>N,|a_n-a|<2\e$\hfill{$\surd$}
+\end{enumerate}
+
+{\bf 注：}
+
+\begin{itemize}
+  \setlength{\itemindent}{1cm}
+  \item $a$是确定的数 （ {不能是$\pm\infty$}） 
+  \item “$\forall\e>0$”应该理解为{“对任意小的$\e>0$”}
+  \item $N$由$\{a_n\}$和$\e$共同决定， “存在$N$”可理解为{“存在充分大的$N(\e)$}”； 
+   {如果$N$能够满足定义， 任意比$N$大的数都能够满足定义； 通常$\e$取得越小，
+  $N$需要取得越大} \ps{$\{a_n\}$的收敛性与其任意多的有限项无关！！}
+  \item 给定$C>0$，“$|a_n-a|<\e$” 可替换为{“$|a_n-a|<C\e$”}， 其中$C>0$为常数
+\end{itemize}
+
+{\bf 例：}证明：
+$$\limn(-1)^n\df1{n^2}=0$$
+
+{\bf 例：}证明：
+$$\limn\left(\df n{n+1}\right)^2=1$$
+
+{\bf 例：}证明：若$\limn a_n=a$，则$\limn|a_n|=|a|$
+
+{\bf 例：}证明：若$|q|<1$，则$\{q^n\}$收敛。
+
+{\bf 思考：}已知$|q|>1$时，$\{q^n\}$发散，请问该如何证明？
+
+\begin{shaded}
+	{\bf 【极限定义的反面说法】}
+	
+	$$\limn a_n\neq a\Leftrightarrow\exists\e_0>0,\forall N>0,\exists
+		n_0>N,|a_{n_0}-a|\geq\e_0$$
+	
+	{\bf 例：}证明：$\limn\df 1n\neq 1$
+	
+	{\bf P51，例5：}证明$\{(-1)^n\}$发散。 
+	
+	{\bf 注：}对比教材上的证明方法与用反面说法证明的区别。
+	
+\end{shaded}
+
+\subsection{数列极限的基本性质}
+
+\subsubsection{【唯一性】}
+
+{\bf 定理2.1.1：}数列极限若存在，必唯一。\ps{唯一性的要求决定了当前的极限定义。
+“记录重大技术突破的技术发展史其实就是一部人类社会发展的技术选择史”}
+
+\begin{center}
+	\resizebox{!}{4cm}{\includegraphics{./images/ch2/1-0.9n.jpg}}
+\end{center}
+
+{\bf 典型方法：}若对$\forall\e>0$，有$|a-b|<\e$，则$a=b$
+
+\subsubsection{【有界性】}
+
+{\bf 定理2.1.2：}数列$\{a_n\}$若收敛，则$\{a_n|n\in\mathbb{Z}_+\}$必有界。
+
+\begin{center}
+	\resizebox{!}{4cm}{\includegraphics{./images/ch2/sin2nn.jpg}}
+\end{center}
+
+{\bf 典型方法：}利用$\e$的特定取值控制无穷的部分，剩余的有限集自然是有界的
+
+\subsubsection{【保号性】}
+
+{\bf 定理2.1.3：}设$\lim\limits_{n\to\infty}a_n>0$，则$\exists N>0$，
+		对$\forall n>N$，$a_n>0$
+		
+{{\bf 推论：}} 
+\begin{enumerate}
+  \setlength{\itemindent}{1cm}
+  \item 设对$\forall n\in\mathbb{N}$，$a_n\geq
+  0$， $\lim\limits_{n\to\infty}a_n=a$， 则$a\geq 0$ 
+  \item 设$\lim\limits_{n\to\infty}a_n=a\ne
+  0$， 则$\exists N$，当$n>N$时，$|a_n|>|a|/2$ 
+  \item
+  设$\lim\limits_{n\to\infty}a_n=a$， 且最多有有限个$a_n$小于零， 则$a\geq 0$
+\end{enumerate}	
+
+\subsubsection{【四则运算的性质】}
+
+{\bf 定理2.2.1：}\ps{强调：只对有限次的四则运算有效！！！}
+设数列$\{a_n\},\{b_n\}$分别以$a,b(b\neq 0)$为极限，则
+数列$\{a_n\pm b_n\},\{a_nb_n\},\left\{\df{a_n}{b_n}\right\}$均收敛，且
+\begin{enumerate}
+  \setlength{\itemindent}{1cm}
+  \item $\limn(a_n\pm b_n)=a\pm b$
+  \item $\limn a_nb_n=ab$
+  \item $\limn\df{a_n}{b_n}=\df ab$
+\end{enumerate}
+
+{\bf 注：}极限运算和四则运算可以交换次序——前提是极限存在
+
+{\bf P58-例2：}计算极限
+$$\limn\df{2n^6+3n^4-n+10}{n^6+n^4+1}$$
+
+{\bf P58-例1：}设$\limn(a_n+b_n)=1$，$\limn(a_n-b_n)=3$，证明$\{a_n\},\{b_n\}$收敛，并求其值。
+
+{\bf 例：}计算极限
+$$\limn\df{\cos^n\theta-\sin^n\theta}{\cos^n\theta+\sin^n\theta}\quad
+(0\leq\theta\leq\df{\pi}{2})$$
+	  	
+{\bf 例：}设$a_n>0(n\in\mathbb{N})$，$\limn a_n=a$，证明：
+$$\limn\sqrt{a_n}=\sqrt a$$
+
+\section{数列极限的性质与判敛}
+
+\subsection{子数列的收敛性}
+
+{\bf 子数列：}
+
+$$\{a_{n_k}\}:\,a_{n_1},a_{n_2},\ldots,a_{n_k},\ldots$$
+
+{\bf 注：}$\{n_k\}$本质上是一个正整数构成的数列，
+所以子数列可以视为两个数列的复合
+
+{\bf 定理2.2.2：}数列收敛，当且仅当其任意子数列收敛，且极限相同。
+
+即：对任意严格单调递增的正整数数列$\{n_k\}$，\ps{强调$k$变化而不是$n$变化}
+$$\limn a_n=a\Leftrightarrow\lim_{k\to\infty}a_{n_k}=a$$
+$\{a_{n_k}\}$收敛于$a$的定义： $\forall \e>0$， $\exists
+{K}$， $\forall {k>K}$， 有 $$|a_{{{n_k}}}-a|<\e,$$
+ 记为
+$$\lim\limits_{{k\to\infty}}a_{n_k}=a\quad \mbox{或}\quad a_{n_k}\to
+a\;{(k\to\infty)}$$
+
+
+{\bf 推论：}若某个数列存在不收敛的子列，或者存在两个极限不相同的子列，则该数列不收敛。
+
+{\bf 例P60，例4：}证明数列$\left\{n^{(-1)^n}\right\}$发散。
+
+{\bf 定理2.2.3}（拉链定理）数列$\{a_n\}$收敛，当且仅当$\{a_{2n}\}$
+和$\{a_{2n-1}\}$收敛于相同的极限。
+
+{\bf 推论：}数列$\{a_n\}$收敛，当且仅当$\{a_{3n}\}$，$\{a_{3n+1}\}$和
+$\{a_{3n+2}\}$收敛于相同的极限。
+
+{\bf 注：}更一般性的推广：如果选择的子列能够完全覆盖原数列，或最多不能覆盖原数列中
+有限多个数，且这些子列均收敛于相同的极限，则原数列收敛。
+
+\subsection{夹逼（迫敛）定理}
+
+{\bf 定理2.2.4：}设对任意$n\in\mathbb{N}$，$x_n\le a_n\le y_n$，
+且$\{x_n\},\{y_n\}$收敛于相同的极限$a$，则$\limn a_n=a$。
+
+\begin{center}
+	\resizebox{!}{5cm}{\includegraphics{./images/ch2/xay_n.jpg}}
+\end{center}
+
+{\bf P61，例5：}证明$\limn [(n+1)^k-{n}^k]=0$，其中$0<k<1$。
+
+{\bf P61，例6：}设$a>0$为常数，证明$\limn \sqrt[n]{a}=1$。
+
+\subsection{单调有界原理}
+
+{\bf 定理2.2.5：}单调有界的数列必收敛。\ps{只要数列从某一项开始单调即可！！！}
+
+{\bf 【重要极限】}（P63-例7）
+$$a_n=\left(1+\df{1}{n}\right)^n\to e\quad (n\to\infty)$$
+
+{\bf 注：}需要掌握的重要性质
+\begin{itemize}
+  \setlength{\itemindent}{1cm}
+  \item 数列$\left\{\left(1+\df 1n\right)^n\right\}$严格单调递增有上界
+  \item 数列$\left\{\left(1+\df 1n\right)^{n+1}\right\}$严格单调递减有下界
+  \item 显然，二者极限相同
+\end{itemize}
+
+\subsection{递推数列的判敛}
+
+{\bf 例：}已知$a_1,a_2$为常数，数列$\{a_n\}$满足：
+$$a_n=\df 12({a_{n-1}+a_{n-2}})\quad(n>2).$$
+证明$\{a_n\}$收敛，并求其极限。
+
+{\bf P65-例9：}设$a_1>0$，$a_{n+1}=\df 12\left(a_n+\df 1{a_n}\right)\,
+(n=1,2,\ldots)$，证明$\{a_n\}$收敛，并求其极限。
+
+{\bf 注：}
+\begin{itemize}
+  \setlength{\itemindent}{1cm}
+  \item 递推式两边同时取极限，解方程求得极限的值，是最便利的计算递推数列极限的方法
+  \item 若通过以上方法可以求出极限的值，通常只需证明数列单调有界即可
+  \item 若该方法无法求得极限的值，则只能利用递推式推导数列通项，进而证明其收敛并计算极限
+\end{itemize}
+
+{\bf 例：}计算下列极限
+\begin{enumerate}[(1)]
+  \setlength{\itemindent}{1cm}
+  \item $\limn\df{n^2}{a^n}\quad (a>1)$
+  \item $\limn\df{n!}{n^n}$
+  \item $\limn\underbrace{\sqrt{c+\sqrt{c+\ldots+\sqrt{c}}}}_{n\mbox{\small
+		  个根号}}$
+\end{enumerate}
+
+{\bf }若极限存在，可由通项公式反推递推式，然后两边取极限，解方程求得极限值
+
+\begin{shaded}
+
+\subsection{特殊的极限计算方法}
+
+{\bf Stolz定理：}
+
+设数列$\{y_n\}$满足$\limn\df 1{y_n}=0$，且$\{y_n\}$至少从某一项开始保持严格单调递增，
+则对任意数列$\{x_n\}$，若$\limn\df{x_n-x_{n-1}}{y_n-y_{n-1}}$存在，则必有
+$$\limn\df{x_n}{y_n}=\limn\df{x_n-x_{n-1}}{y_n-y_{n-1}}$$
+
+{\bf 注：}Stolz定理主要用于计算"$\df{\infty}{\infty}$型"的极限
+
+{\bf 推论：}若数列$\{a_n\}$收敛，则
+$$\limn\df{a_1+a_2+\ldots+a_n}{n}=\limn a_n$$
+
+{\bf 例：}计算以下极限
+\begin{enumerate}[(1)]
+  \setlength{\itemindent}{1cm}
+  \item $\limn\df{1+\sqrt 2+\sqrt[3]{3}+\ldots+\sqrt[n]{n}}{n}$ 
+  \item $\limn\df{1^k+2^k+\ldots+n^k}{n^{k+1}},\quad(k\in\mathbb{N})$ 
+  \item $\limn\left(\df{1^k+2^k+\ldots+n^k}{n^{k}}-\df
+  n{k+1}\right),\quad(k\in\mathbb{N})$
+\end{enumerate}
+
+\end{shaded}
+
+\section{数值级数}
+
+{\bf 级数（无穷和）：}无穷多个数按照一定次序求和
+$$\sum\limits_{k=1}^{\infty}a_k
+=\lim_{n\to\infty}\left(\sum_{k=1}^na_k\right)$$  
+其中$a_k\in\mathbb{R}\,(k\in\mathbb{N})$。
+
+\begin{itemize}
+  \item {\bf 部分和（数列）：}$S_n=\sum\limits_{k=1}^na_k$
+  \item {\bf 级数收敛}$\Leftrightarrow\{S_n\}$收敛
+\end{itemize}
+
+{\bf 例：}判断下列级数的收敛性
+\begin{enumerate}[(1)]
+  \setlength{\itemindent}{1cm}
+  \item $\sumn q^n\quad (q>0)$ （\ldots\ldots 几何级数） 
+  \item $\sumn\df{1}{n(n+1)}$ 
+  \item $\sumn\df 1n$ （\ldots\ldots 调和级数） 
+% 		  \item $\sumn\df 1n^2$
+  \item $\sumn (-1)^n$
+\end{enumerate}
+
+\subsection{收敛级数的性质}
+
+\begin{enumerate}[{\bf 【性质1】}]
+  \item {\bf P74-定理2.3.1}（级数收敛的必要条件） 
+  $$\sumn a_n\mbox{收敛}\Rightarrow\limn a_n=0$$
+  \item $\sumn
+  a_n$收敛$\Leftrightarrow\sum\limits_{n=k}^{\infty}a_n$收敛$(k\in\mathbb{N})$
+  \ps{讨论收敛性时只需考虑部分和的后一部分，因为数列的收敛性与其前任意项无关}
+  \item {\bf P73-例2：}$\{a_n\}$收敛$\Leftrightarrow\sumn(a_{n+1}-a_n)$收敛
+  \item {\bf P75-定理2.3.2-3：}线性运算不改变级数的敛散性  
+  \item {\bf P75-定理2.3.4：}增加、减少或改变级数中的有限项不影响其敛散性  
+  \begin{itemize}
+    \item {{增减或改变数列中的有限项不改变其敛散性}} 
+  \end{itemize}
+  \item {\bf P75-定理2.3.5：}若$\sumn a_n$收敛，不改变求和顺序，
+  任意合并其中的项，所得新的级数仍收敛 
+  \begin{itemize}
+    \item {\bf 推论：}合并收敛级数中的相邻项，所得级数仍收敛 
+    \item {{对发散级数，该性质不成立}} 
+    \item {{改变求和次序，可能改变级数的收敛和}}，例：$\sumn\df{(-1)^n}n$
+  \end{itemize}
+\end{enumerate}
+
+{\bf 例：}判断以下级数的敛散性；若收敛，求其和
+
+\begin{enumerate}[(1)]
+  \setlength{\itemindent}{1cm}
+  \item $\sumn\ln\left(1+\df 1n\right)$
+  \item
+  $\sumn\left[\prod\limits_{k=0}^p(\alpha+n+k)\right]^{-1},\;(p\in\mathbb{N})$
+  \item $\sumn\df{x^{2^{n-1}}}{1-x^{2n}}$
+  \item $\sumn\df{1}{\sqrt n}$
+\end{enumerate}
+
+\section{同号级数的收敛性}
+
+\subsection{同号级数收敛的充要条件}
+
+{\bf 定理2.4.1：}正项级数收敛，当且仅当其部分和数列有界。
+
+{\bf P80，例1：}证明$\sumn\df1{n!}$收敛。
+
+\subsection{比较判别法}
+
+{\bf 定理2.4.2}（比较判别法的不等式形式）若对充分大的$n$，总有$0\leq a_n\leq b_n$，则
+\begin{enumerate}
+  \setlength{\itemindent}{1cm}
+  \item 若$\sumn b_n$收敛，则$\sumn a_n$收敛
+  \item 若$\sumn a_n$发散，则$\sumn b_n$发散
+\end{enumerate}
+
+{\bf P82-例3：}证明：\ps{p-级数}
+\begin{enumerate}[(1)]
+  \setlength{\itemindent}{1cm}
+  \item[(1)] $p>1$时，$\sumn\df1{n^p}$收敛；
+  \item[(2)] $0<p\leq 1$时，$\sumn\df1{n^p}$发散。
+\end{enumerate}
+
+{\bf 【hint】：}(2)，$p=1$时，显然发散。又因为
+$$0<\df 1n<\df 1{n^p},\quad (0<p<1),$$
+已知调和级数发散，故p-级数发散；
+
+(1)由以下推导可知$p>1$时，p-级数的部分和数列有界
+\begin{eqnarray*}
+	S_{(2^k)^p}&=&1+\df 1{2^p}+\underbrace{\left(\df1{3^p}+\df1{(2^2)^p}\right)}_2
+				+\underbrace{\left(\df1{5^p}+\ldots+\df1{(2^3)^p}\right)}_{2^2}+\ldots\\
+				&&+\underbrace{\left[\df1{(2^{k-1}+1)^p}+\ldots+\df1{(2^k)^p}\right]}_{2^{k-1}}\\
+			  &\leq &1+\df 1{2^p}+2\cdot\df1{2^p}+2^2\cdot\df1{(2^2)^p}
+			    +\ldots+2^{k-1}\cdot\df1{(2^{k-1})^p}\\
+			  &=&1+\df 1{2^p}+\left[\df1{2^{p-1}}+\left(\df1{2^{p-1}}\right)^2+
+			    \ldots+\left(\df1{2^{p-1}}\right)^{k-1}\right]\\
+			  &=&1+\df 1{2^p}+\df1{2^{p-1}}\df{1-\left(\df1{2^{p-1}}\right)
+			    ^{k-1}}{1-\df1{2^{p-1}}}<1+\df 1{2^p}+\df1{2^{p-1}-1}
+\end{eqnarray*}
+
+{\bf 例：}讨论下列级数的敛散性
+\begin{enumerate}[(1)]
+  \setlength{\itemindent}{1cm}
+  \item[(1)] $\sumn\df{1}{3^{\ln n}}$
+  \hfill（{[hint]：$a^{\ln b}=b^{\ln a},\;(a,b>0)$}）
+  \item[(2)] $\sum\limits_{n=2}^{\infty}\df 1{(\ln n)^{\ln n}}$
+  \item[(3)] $\sum\limits_{n=3}^{\infty}\df 1{(\ln n)^{\ln\ln n}}$
+  
+  ([hint]: $\sum\limits_{n=3}^{\infty}\df 1{(\ln n)^{\ln\ln n}}=
+  \sum\limits_{n=3}^{\infty}\df 1{e^{(\ln\ln
+  n)^2}}>\sum\limits_{n=3}^{\infty}\df 1n,e.g. (\ln\ln n)^2<\ln n,e.g. \ln
+  n<\sqrt{n}$)
+\end{enumerate}
+
+{\bf P82-例4：}设$a_n\leq c_n\leq b_n\;(n\in\mathbb{N})$，$\sumn a_n,\sumn b_n$均收敛，
+则$\sumn c_n$收敛。
+\begin{itemize}
+  \setlength{\itemindent}{1cm}
+  \item 类似于数列收敛的“夹逼定理”
+  \item 不要求必须是正项级数
+\end{itemize}
+
+{\bf 推论}（P93-定理2.5.2）若级数$\sumn|a_n|$收敛，则$\sumn a_n$也收敛。
+
+{\bf 定理2.4.3}(比较判别法的极限形式)
+
+已知$a_n,b_n$均非负$(n\in\mathbb{Z}_+)$，且$\limn\df{a_n}{b_n}=l$，则 
+\begin{enumerate}
+  \setlength{\itemindent}{1cm}
+  \item 若$0<l<+\infty$，$\sumn a_n,\sumn b_n$同敛散 
+  \item 若$l=0$，$\sumn b_n$收敛$\Rightarrow\sumn a_n$收敛 
+  \item 若$l=+\infty$，$\sumn a_n$收敛$\Rightarrow\sumn b_n$收敛
+\end{enumerate}
+
+{\bf P83-例5-6：}判断以下级数的收敛性
+\begin{enumerate}[(1)]
+  \setlength{\itemindent}{1cm}
+  \item $\sumn\df 1{2^n}\df{n^2+1}{2n^2-1}$ 
+  \item $\sumn\df{n+1}{n^k+2}\quad (k=1,2,\ldots)$ 
+  \item $\sumn\df{1}{n\sqrt[n]{n}}$ 
+  \item $\sumn\df{1}{1+x^n}\quad(x>0)$
+\end{enumerate}
+
+{\bf 推论}（p-判别法）
+设$a_n\geq 0\;(n=1,2,\ldots)$，则 
+\begin{enumerate}
+  \setlength{\itemindent}{1cm}
+  \item 若存在$p>1$，使得$\limn n^pa_n$存在，则$\sumn a_n$收敛 
+  \item 若$0<p\leq 1$，使得$\limn n^pa_n>0$，则$\sumn a_n$发散
+\end{enumerate}
+
+{\bf 例：}判断以下级数的收敛性
+\begin{enumerate}[(1)]
+  \setlength{\itemindent}{1cm}
+  \item $\sumn\df{\arctan n}{n^{3/2}}$
+  \item $\sumn\df{\ln n}{n^{5/4}}$\ps{任何正幂次函数的增长速度最终都比任意对数函数快}
+\end{enumerate}
+
+{\bf 推论：}$\sumn a_n$、$\sumn b_n$均为正项级数，若对充分大的$n$，总有
+$$\df{a_{n+1}}{a_n}\leq\df{b_{n+1}}{b_n},$$
+则若$\sumn b_n$收敛，$\sumn a_n$收敛。
+
+{\bf 例：}讨论级数$\sumn\df{n^n}{t^nn!}$的敛散性。
+
+{\bf 课后思考}（2012年全国大学生数学竞赛）
+$\sumn a_n$和$\sumn b_n$均为正项级数，证明：
+\begin{enumerate}
+  \setlength{\itemindent}{1cm}
+  \item 若$\limn\left(\df{a_n}{a_{n+1}b_n}-\df 1{b_{n+1}}\right)>0$，
+  且$\sumn b_n$收敛，则$\sumn a_n$收敛；\ps{是否一定要假设$\sumn b_n$收敛？}
+  \item 若$\limn\left(\df{a_n}{a_{n+1}b_n}-\df 1{b_{n+1}}\right)<0$,
+  且$\sumn b_n$发散，则$\sumn a_n$发散。
+\end{enumerate}
+
+{\bf 牢记：比较判别法仅对同号级数有效！！！}
+
+\subsection{比值判别法}
+
+{\bf 定理2.4.4}（d'Alembert判别法）
+设$a_n\geq 0(n=1,2,\ldots)$，$\limn\df{a_{n+1}}{a_n}=q$，则
+\ps{极限形式} 
+\begin{enumerate}
+  \setlength{\itemindent}{1cm}
+  \item $0\leq q<1\Rightarrow\sumn a_n$收敛 
+  \item $q>1\Rightarrow\sumn a_n$发散
+\end{enumerate}
+
+{\bf 注：}$q=1$时，级数的敛散性不确定，例如：$\sumn\df 1n$和$\sumn\df 1{n^2}$
+
+{\bf P83-85-例5-7：}判断下列级数的收敛性
+\begin{enumerate} [(1)]
+  \setlength{\itemindent}{1cm}
+  \item $\sumn\df 1{2^n}\df{n^2+1}{2n^2-1}$ 
+  \item $\sumn\df{n^2}{2^n}$ 
+  \item $\sumn\df{(2n)!}{(n!)^2}$
+  \item $\sumn n!\left(\df{x}{n}\right)^n\quad (x>0)$
+\end{enumerate}
+
+{\bf 定理2.4.4‘}（习题2.4-11：比值判别法的不等式形式）
+设$a_n\geq 0\,(n=1,2,\ldots)$，则 
+\begin{enumerate}
+  \setlength{\itemindent}{1cm}
+  \item 若$n$充分大时，有$\df{a_{n+1}}{a_n}\leq r<1$，则$\sumn a_n$收敛 
+  \item 若$n$充分大时，有$\df{a_{n+1}}{a_n}\geq 1$，则$\sumn a_n$发散 
+\end{enumerate}
+
+{\bf 思考：}为什么以上第一个判定条件中要求$r<1$？
+
+{\bf P86-例8：}判断以下级数的收敛性
+$$\sumn\df{2+(-1)^n}{n^2}$$
+
+\subsection{根值判别法}
+
+{\bf 定理2.4.5}（Cauchy判别法）\ps{极限形式}
+设$a_n\geq 0(n=1,2,\ldots)$，$\limn\sqrt[n]{a_n}=q$，则
+\begin{enumerate}
+  \setlength{\itemindent}{1cm}
+  \item $0\leq q<1\Rightarrow\sumn a_n$收敛
+  \item $q>1\Rightarrow\sumn a_n$发散
+\end{enumerate}
+
+{\bf 注：}
+\begin{itemize}
+  \item \setlength{\itemindent}{1cm}
+  \item 和比值法类似，$q=1$时，无法判定级数的敛散性
+  \item
+  但是，可以证明：若$\limn\df{a_{n+1}}{a_n}=q$，则必有$\limn\sqrt[n]{a_n}=q$，请问：
+  这意味着比值和根植法哪一个的适用范围更广？（答：根植）
+\end{itemize}
+
+{\bf P86-例8：}判断下列级数的收敛性
+\begin{enumerate} [(1)]
+  \setlength{\itemindent}{1cm}
+  \item $\sumn\df{2+(-1)^n}{5^n}$
+  \item $\sumn\df{n^2}{\left(2+\df 1n\right)^n}$
+  \item $\df 12+\df 1{3^2}+\df 1{2^3}+\df 1{3^4}+\df 1{2^5}+\df 1{3^6}+\ldots$
+\end{enumerate}
+
+{\bf 思考：}根植判别法的不等式形式该如何表述？
+
+\begin{shaded}
+
+\subsection{Raabe判别法*}
+
+{\bf Raabe判别法：}设$a_n\geq 0\,(n=1,2,\ldots)$，且
+$$\limn n\left(\df{a_n}{a_{n+1}}-1\right)=r,$$
+则当$r>1$时，$\sumn a_n$收敛；$r\leq 1$时，$\sumn a_n$发散。	
+
+{\bf 例：}判断以下级数的敛散性
+\begin{enumerate}[(1)]
+  \setlength{\itemindent}{1cm}
+  \item $\sumn\df{(2n-1)!!}{(2n)!!}\df 1{2n+1}$
+  \item $\sumn\df{n!}{(x+1)\ldots(x+n)}\;(x>0)$
+\end{enumerate}
+
+{\bf 不等式形式：}设$a_n\geq 0\,(n=1,2,\ldots)$，定义
+$$R_n=n\left(\df{a_n}{a_{n+1}}-1\right),$$
+若存在$r>1$，当$n$充分大时，总有$R_n\geq r$，则$\sumn a_n$收敛；
+若当$n$充分大时，总有$R_n\leq 1$，则$\sumn a_n$发散。
+
+{\bf 例：}判断以下级数的敛散性
+$$\sumn\df{\sqrt{n!}}{(2+\sqrt 1)(2+\sqrt 2)\ldots(2+\sqrt n)}$$
+
+\end{shaded}
+
+\section{变号级数收敛的判定方法}
+
+\subsection{交错级数的收敛性}
+
+{\bf 交错级数：}相邻各项符号相反，设$a_n\geq 0,(n\in\mathbb{Z}_+)$
+$$\sumn(-1)^na_n$$
+
+{\bf 定理2.5.1}（Leibniz判别法）若数列$\{a_n\}$单调趋于$0$，则交错级数$\sumn (-1)^na_n$收敛，且
+其和的绝对值不超过$|a_1|$。
+
+{\bf 注：}Leibniz判别法只是一个充分条件，常见的错误，将其作为必要条件使用！！！
+
+{\bf 例：}判断下列级数的敛散性
+\begin{enumerate} [(1)]
+  \setlength{\itemindent}{1cm}
+  \item $\sumn(-1)^{n-1}\df{2^nn!}{n^n}$ 
+  \item $\sumn(-1)^n\df{\sqrt{n}}{n+100}$ 
+  \item $\sumn\sin\left(\pi\sqrt{n^2+k^2}\right)$
+\end{enumerate}
+
+\subsection{绝对收敛与条件收敛}
+
+{\bf 定理2.5.2：}若$\sumn |a_n|$收敛，则$\sumn a_n$收敛；反之不然。
+
+{\bf 定理2.5.3-2.5.4}（绝对收敛级数的性质）
+
+\begin{itemize}
+  \setlength{\itemindent}{1cm}
+  \item {\bf 绝对收敛：}$\sumn |a_n|$收敛\ps{这样已经隐含了$\sumn a_n$收敛}
+  \item {\bf 条件收敛：}$\sumn |a_n|$发散，但$\sumn a_n$收敛
+\end{itemize}
+
+\begin{enumerate}[(1)]
+  \setlength{\itemindent}{1cm}
+  \item {\bf 交换律：}绝对收敛级数求和项任意交换次序和不变\ps{强调：交换次序意味着新的级数}
+  \item {\bf 级数的Cauchy乘积：}设$\sumn a_n,\sumn
+	  b_n$绝对收敛，则$\sum\limits_{i,j=1}^na_ib_j$绝对收敛，且
+	  $$\sum\limits_{i,j=1}^{\infty}a_ib_j=\sumn a_n\sumn b_n$$
+\end{enumerate}
+
+\begin{shaded}
+
+\subsection{特殊判别法}
+
+{\bf Dirichlet判别法：}若数列$\{a_n\}$单调趋于$0$，$\sumn b_n$
+  的部分和有界，则$\sumn a_nb_n$收敛。
+  
+{\bf 例：}判断以下级数的敛散性
+$$\sumn\df{\sin nx}n$$
+
+{\bf Abel判别法：}若数列$\{a_n\}$单调有界，$\sumn b_n$收敛，则$\sumn a_nb_n$收敛。
+
+{\bf 例：}判断以下级数的敛散性
+
+$$\sumn(-1)^n\left(1+\df 1n\right)^n\df{1}{\sqrt n}$$ 
+
+\subsection{条件收敛的有趣性质}
+
+{\bf Riemann定理：}若级数$\sumn a_n$条件收敛，则对任意给定的数$A$，都可以通过对该级数的
+重新排列，使得新的级数以$A$为其和。
+
+\begin{itemize}
+  \item 对条件收敛的级数进行重排可能改变其和
+  \item 重排后的级数可能发散
+\end{itemize}
+
+\end{shaded}
+
+\begin{center}
+	\resizebox{!}{6.8cm}{\includegraphics{./images/ch2/seriesCre/010.jpg}}
+\end{center}
+
+{\bf 例：}判断正误：
+\begin{enumerate}[(1)]
+  \setlength{\itemindent}{1cm}
+  \item 若$a_n>0(n=1,2,\ldots)$，则\\
+  \centerline{$a_1-a_1+a_2-a_2+a_3-a_3+\ldots $}
+  收敛 \hfill ({$\times$})
+  \item 若以上$\limn a_n=0$，则以上级数收敛 \hfill
+  ({$\surd$})
+  \item $\sumn a_n$收敛，$\limn b_n=1\Rightarrow\sumn a_nb_n$收敛
+  \hfill ({$\times$})
+  \item $\sumn a_n$部分和有界，$\limn b_n=0\Rightarrow\sumn a_nb_n$收敛
+  \hfill ({$\times$})
+  \item 若$\limn\df{a_n}{b_n}=1$，则若$\sumn a_n$绝对收敛，$\sumn b_n$必收敛 \hfill
+  ({$\surd$})
+  \item $\sumn a_n,\sumn b_n$绝对收敛$\Rightarrow\sumn (a_n+b_n)$绝对收敛 \hfill
+  ({$\surd$})
+  \item $\sumn a_n,\sumn b_n$条件收敛$\Rightarrow\sumn (a_n+b_n)$条件收敛 \hfill
+  ({$\times$})
+  \item 若$\sumn a_n^2$收敛，则$\sumn a_n^3$收敛 \hfill
+  ({$\surd$})
+\end{enumerate}
+
+{\bf 例：}判断下列级数的敛散性
+\begin{enumerate}[(1)]
+  \setlength{\itemindent}{1cm}
+  \item $\sumn\df{2^nn!}{n^n}$
+  \item $\df 1{a+b}+\df 1{2a+b}+\df 1{3a+b}+\ldots\quad (a>0,b>0)$
+  \item $\sumn\df{1!+2!+\ldots+n!}{n!}$
+  \item $\sumn\left[\df 1n-\ln\left(1+\df 1n\right)\right]$
+  \item $\sumn\df{\sqrt{n!}}{(2+\sqrt 1)(2+\sqrt 2)\ldots(2+\sqrt n)}$
+  \item $\sumn\df{\sqrt{n+1}-\sqrt{n}}{n^p}\quad(p>0)$
+  \item $\sumn\df{n^{n+\frac 1{\,n\,}}}{\left(n+\df 1n\right)^n}$
+  \item $\sumn n!\left(\df{x}{n}\right)^n\quad (x>0)$
+  \item $\sumn\df {a_n}{(1+a_1)(1+a_2)\ldots(1+a_n)}\quad(a_n\geq
+	  0,n\in\mathbb{N})$
+  \item $\sumn\df{n^{n+\frac 1{\,n\,}}}{\left(n+\df 1n\right)^n}$
+\end{enumerate}
+
+\newpage
+
+\section*{课后作业}
+
+\begin{itemize}
+  \item 习题2.1：2，6(1,3)，7，9
+  \item 已知数列$\{a_n\}$单调递增，它的一个子列$\{a_{n_k}\}$收敛于$a$，
+  证明：$\limn a_n=a$。
+  \item 证明：$\sqrt[n]n\to 1\,(n\to\infty)$。
+  \item 习题2.2：1(4,6)，2(2,3)，3，7，9，11
+  \item 习题2.3：4，5，6
+  \item 写出根植判别法的不等式形式，并证明。
+  \item 习题2.4：1(2-4),3(3-8),5(2,4),6(1-3),8,9
+  \item 习题2.5：2(1,3,6,7,8),3,7,8
+\end{itemize}
+
+{\bf 【课堂练习与思考题】}
+
+\begin{itemize}
+  \item 习题2.2：6，8，10，12，18
+  \item 设$0<a_1<2$，且$(2-a_n)a_{n+1}=1\,(n\in\mathbb{N})$，
+  	证明$\{a_n\}$收敛，求其极限。
+  \item 设$x_1=\df 12$，$x_{n+1}=x_n^2+x_n\,(n\in\mathbb{N})$，求
+	$$\limn\left(\df 1{x_1+1}+\df 1{x_2+1}+\ldots+\df
+	1{x_n+1}\right)$$
+  \item 已知$0<x<1$，数列$\{a_n\}$定义如下：
+	$$a_1=\df x2,\;a_n=\df x2-\df{a_{n-1}^2}2.$$
+	证明$\{a_n\}$收敛，并求其极限。
+  \item 习题2.3：7，8 
+  \item 习题2.4：10-15,17
+  \item 习题2.5：4,6,10,13
+\end{itemize}

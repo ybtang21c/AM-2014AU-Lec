@@ -2,35 +2,27 @@
 
 \subsection{学什么}
 
+\begin{itemize}
+	  \item {\bf Wikipedia——微积分} 
 	\begin{itemize}
-		  \item {\bf Wikipedia——微积分} 
-		\begin{itemize}
-		  \item Latin, {\it a small stone used for counting}  
-		  \item {\it a branch of mathematics focused on {\b limits, functions,
-		  	derivatives, integrals,}  and {\b infinite series}} 
-	  	  \item {\it widespread application in {\b science, economics,} and {\b
-	  	  engineering}} 
+	  \item Latin, {\it a small stone used for counting}  
+	  \item {\it a branch of mathematics focused on {\b limits, functions,
+	  	derivatives, integrals,}  and {\b infinite series}} 
+  	  \item {\it widespread application in {\b science, economics,} and {\b
+  	  engineering}} 
 % 		  \item {\it constitues a major part of modern mathematics} 
-		\end{itemize}
-		\item {\bf John von Neumann} （{\small\it The Mathematician, 1947}）
-		\begin{itemize}
-		  \item {\it The calculus was the first achievement of modern
-		  mathematics, and it is difficult to overestimate its importance.}
-		\end{itemize}
-		  \item James Stewart, Calculus(5th eds.), 2004
-		  \begin{itemize}
-		    \item {\it Calculus is fundamentally different from the mathematics that
-		    you have studied previously}
-		    \item {\it Calculus is less static and more {\b dynamic}}
-		    \item {\it It is concerned with change and {\b motion}}
-		    \item {\it It deals with quantities that {\b approach} other
-		    quantities}%\marginpar{note}
-		  \end{itemize}
-		\end{itemize}
+	\end{itemize}
+	\item {\bf John von Neumann} （{\small\it The Mathematician, 1947}）
+	\begin{itemize}
+	  \item {\it The calculus was the first achievement of modern
+	  mathematics, and it is difficult to overestimate its importance.}
+	\end{itemize} 
+\end{itemize}
 
-	\begin{center}
-		\scalebox{0.3}{\includegraphics{./images/ch1/AM_architecture.jpg}}
-	\end{center}
+\begin{center}
+	\scalebox{0.3}{\includegraphics{./images/ch1/AM_architecture.jpg}}
+	\ps{上课前画好}
+\end{center}
 
 \subsection{怎么学}
 	
@@ -125,7 +117,7 @@ $\mathbb{N}\subset\mathbb{Z}\subset\mathbb{Q}\subset\mathbb{R}\subset\mathbb{C}$
 {\bf 注：}通过集合的笛卡尔乘积{\b “$\times$”} 可以定义更{\bf “高维”}的集合，例如：\\
 	\centerline{$\mathbb{R}^2=\mathbb{R}\times\mathbb{R}$}
 
-\subsection{区间和领域}
+\subsection{区间和邻域}
 
 {\bf 例：}$(a,b)=\{x|a<x<b\}=\{x\in\mathbb{R}|a<x<b\},a,b\in\mathbb{R}$
 
@@ -136,7 +128,7 @@ $$x=+\infty,\quad x=-\infty$$
 而只有
 $$x\to+\infty,\quad x\to\infty$$
 
-{\bf 领域：}“与$a$邻近，距离不超过$\delta$”
+{\bf 邻域：}“与$a$邻近，距离不超过$\delta$”
 $$U(a,\delta)=(a-\delta,a+\delta)=\{x||x-a|<\delta\}$$
 
 {\bf 例：}
@@ -150,7 +142,7 @@ $$\{x||x|>M\},\;M>0$$
 
 {\bf 问：}可以写成$U(\infty,M)$吗？
 
-{\bf 注：}类似地，可以有所谓的半邻域，左（右）领域
+{\bf 注：}类似地，可以有所谓的半邻域，左（右）邻域
 
 \begin{shaded}
 
@@ -177,7 +169,8 @@ $$\{x||x|>M\},\;M>0$$
 	\begin{itemize}
 	  \item {{\bf 无限抽象原则}（Cantor，Frege）:} 任意给定某个条件就可以确定一个集合。（每个概念的外延可以确定一个集合）
 	  \item {\bf 观点：}不加限制地使用无限抽象原则将导致罗素悖论
-	  \item {{\bf 有限抽象原则}（限制公理）:} 如果已知一个集合和一个给定的条件，则该集合中所有满足条件的元素{\b 可以}构成一个集合。
+	  \item {{\bf 有限抽象原则}（限制公理）:} 如果已知一个集合和一个给定的条件，
+	  则该集合中所有满足条件的元素{\it 可以}构成一个集合。
 	  \item {\bf ZFS（Zermelo-Fraenkel-Skolem）公理化集合系统}
 	  
 	  {\bf 命题：}在ZFS中，无法定义包含所有集合的集合。
@@ -201,12 +194,15 @@ $$\{x||x|>M\},\;M>0$$
 \subsection{实数集的性质}
 	\begin{enumerate} 
 	  \item {\bf 有序性}（$\mathbb{R}^2$、$\mathbb{C}$不具备有序性） 
+	  \ps{$\mathbb{R}$是全序的，而$\mathbb{R}^2$、$\mathbb{C}$在一定的度量下
+	  是半序的}
 	  \item {\bf 完备性（连续性）： }实数集与数轴上的点之间存在一一对应
 	  
-	  {\bf{连续性公理（确界原理）：}}非空有{\b 上界}的实数集必有{\b 上确界} （最小的上界）
+	  {\bf{连续性公理（确界原理）：}}非空有{上界}的实数集必有{上确界} （最小的上界）
 	\end{enumerate}
 	
 	{\bf 注：}有理数集不满足连续性公理。
+	\ps{有理数集的有限次四则运算仍是有理数}
 	
 	{\bf 例：$e=\mathrm{sup}\left\{\left(1+\frac
 	1n\right)^n\right|n\in\mathbb{N}\}\notin\mathbb{Q}$}
@@ -243,11 +239,12 @@ $$y=f(x),\;x\in A,y\in B$$
 	
 {\bf 问题:}如何比较两个集合中元素的个数？
 \begin{itemize}
-  \item 自然数与正偶数一样多？（{$\surd$}）
-  \item 自然数与整数一样多？（{$\surd$}）
-  \item 自然数与有理数一样多？（{$\surd$}）
-  \item 区间$(a,b)$中的实数与$\mathbb{R}$中一样多？（{$\surd$}）
-  \item 自然数与实数一样多？（{$\times$}）
+  \setlength{\itemindent}{1cm}
+  \item 自然数与正偶数“一样多”？（{$\surd$}）
+  \item 自然数与整数“一样多”？（{$\surd$}）
+  \item 自然数与有理数“一样多”？（{$\surd$}）
+  \item 区间$(a,b)$中的实数与$\mathbb{R}$中“一样多”？（{$\surd$}）
+  \item 自然数与实数“一样多”？（{$\times$}）
 \end{itemize}
 	
 {\bf 无穷集合:}可以和自身的某个子集建立起一一映射的集合
@@ -259,6 +256,7 @@ $$y=f(x),\;x\in A,y\in B$$
 	\begin{shaded}
 		{\bf 关于函数}
 		\begin{itemize}
+  		  \setlength{\itemindent}{1cm}
 		  \item 微积分是关于运动和变化的数学；
 		  \item 函数是对运动（例如：曲线、曲面、波以及各种变化）变化过程中各种量与量的依赖关系的抽象描述；
 		  \item 函数刻画了运动变化中的量之间的相互依存关系（{\bf 注：}与“依存”对应的关系叫做“独立”）
@@ -266,6 +264,7 @@ $$y=f(x),\;x\in A,y\in B$$
 		
 		{\bf 常量和变量}
 		\begin{itemize}
+  		  \setlength{\itemindent}{1cm}
 		  \item {\bf 常量和变量是相对的}，在一定条件下可以相互转化
 		  \item 变量之间的关系可能是相互依存，也可能是相互独立的
 		  \item 为了避免讨论过于复杂，简化问题，我们可能选择只考虑部分参数的变化，而将其他参数视为（或设为）常量，
@@ -275,12 +274,24 @@ $$y=f(x),\;x\in A,y\in B$$
 		
 		{\bf 大学数学与中学数学}
 		\begin{itemize}
+  		  \setlength{\itemindent}{1cm}
 		  \item 数学并无严格的“高等”和“初等”之分，只是存在众多的分支和领域
 		  （例如：代数、几何、分析、图论，几何又分为平面几何、立体几何、解析几何等），
 		  不同分支或领域的直观性和难度各有不同
 		  \item 对于函数，中学阶段更注重在对应关系“确定”的情况下，寻找其数学描述或利用给定的值进行计算
 		  \item 大学阶段，从微积分开始，更着重对函数的整体特性，以及不同函数间的转换、类比和关于其整体特征的计算与分析
 		\end{itemize}
+		
+		 {\bf James Stewart, Calculus(5th eds.), 2004}
+		  \begin{itemize}
+  		    \setlength{\itemindent}{1cm}
+		    \item {\it Calculus is fundamentally different from the mathematics that
+		    you have studied previously}
+		    \item {\it Calculus is less static and more {\b dynamic}}
+		    \item {\it It is concerned with change and {\b motion}}
+		    \item {\it It deals with quantities that {\b approach} other
+		    quantities}%\marginpar{note}
+		  \end{itemize}
 	\end{shaded}
 
 	{\bf （一元）函数：}由实数集到实数集的映射
@@ -317,11 +328,11 @@ $$y=f(x),\;x\in A,y\in B$$
 \begin{shaded}
 {\bf 常用数学符号}
 	\begin{itemize}
-	  \item {\b$\bm{\forall}$} \quad 任意 (for all)
-	  \item {\b$\bm{\exists}$} \quad 存在 (exist)
-	  \item {\b$\bm{\Rightarrow}$} \quad 推出 (deduce, imply)
-	  \item {\b$\bm{\Leftrightarrow}$} \quad 等价 (equivalent, if and only if)
-	  \item {\b$\bm{\to}$} \quad 趋于 (approach)
+	  \item {$\bm{\forall}$} \quad 任意 (for all)
+	  \item {$\bm{\exists}$} \quad 存在 (exist)
+	  \item {$\bm{\Rightarrow}$} \quad 推出 (deduce, imply)
+	  \item {$\bm{\Leftrightarrow}$} \quad 等价 (equivalent, if and only if)
+	  \item {$\bm{\to}$} \quad 趋于 (approach)
 	\end{itemize}
 \end{shaded}
 
@@ -334,13 +345,13 @@ $$y=f(x),\;x\in A,y\in B$$
 		
 	{\bf 注：}函数的有界性等价于其值域的有界性
 
-	{{\bf 例：}讨论如下函数的有界性}
+	{{\bf 例：}指出如下函数的有界性}
 	
 		\quad(1)\;$y=\arctan x$,\hspace{2em} (2)\;$y=e^x$,\hspace{2em}
 		(3)\;$y=x\sin x$
 		
 \begin{shaded}
-	{\bf “反面定义”的写法*}
+	{\bf “反面定义”（否命题）的写法*}
 	\begin{enumerate}
 	  \item {“任意”和“存在”互换}
 	  \item {“$\geq(\leq)$”和“$<(>)$”互换}
@@ -374,10 +385,11 @@ $$x_1<x_2\Rightarrow f(x_1)\leq f(x_2)$$
 	$$f(-x)=f(x)$$
 
 {{\bf 例：}试给出如下性质的数学定义}
-	\begin{enumerate}
-	  \item 函数$y=f(x)$的图像关于$x=a$对称
-	  \item 函数$y=f(x)$的图像关于点$(x_0,y_0)$对称
-	\end{enumerate}
+\begin{enumerate}[(1)]
+  \setlength{\itemindent}{1cm}
+  \item 函数$y=f(x)$的图像关于$x=a$对称
+  \item 函数$y=f(x)$的图像关于点$(x_0,y_0)$对称
+\end{enumerate}
 
 {{\bf 思考：}$f(x)=g(a-x),\;(x\in\mathbb{R})$有什么几何意义？}
 
@@ -461,7 +473,7 @@ $(x\in[0,1])$
 \subsubsection{【初等函数】}
 
 \begin{enumerate}
-  \item {\bf 幂函数：} $y=x^a,\; (a\in\mathbb{R})$
+  \item {\bf 幂函数：} $y=x^a,\; (a\in\mathbb{R})$\ps{只有整数次幂的函数可以手工计算！！！}
   \item {\bf 指数函数：} $y=a^x,\; (a>0,a\ne 1)$
   \begin{itemize}
     \item {\b $y=e^x$}
@@ -494,7 +506,8 @@ $(x\in[0,1])$
 
 $$f(x)=\frac{P(x)}{Q(x)}, \quad\mbox{其中}P(x),Q(x)\mbox{均为多项式函数}$$
   
-{\bf 注：}任意有理函数总可以化为一个多项式函数和一个真有理函数（分子的次数比分母低）的和
+{\bf 注：}任意有理函数总可以化为一个多项式函数和一个真分式（分子的次数比分母低的有理函数）
+的和
 	  
 {{\bf 例：}用多项式除法化简以下函数}
 $$\frac{5x^3+3x^2+1}{x+1}$$
@@ -539,6 +552,7 @@ $$y=ty_2+(1-t)y_1,\quad x=tx_2+(1-t)x_1,\quad (t\in\mathbb{R})$$
 		  
 {\bf 注：}
 \begin{itemize}
+  \setlength{\itemindent}{1cm}
   \item 参数方程必须标明参数的取值范围！！！
   \item {利用参数方程可以表示平面上的任意曲线}
   \item {任意曲线的参数方程均不唯一}
@@ -551,7 +565,8 @@ $$(x,y)\;\to\;(\rho\cos\theta,\rho\sin\theta)\quad
 	
 {{\bf 例：}求以下曲线的极坐标方程\hfill P38-例9}
 		
-\begin{enumerate}
+\begin{enumerate}[(1)]
+  \setlength{\itemindent}{1cm}
   \item $y=kx,(k\in\mathbb{R})$
   \item $x+y=1$
   \item $x^2+y^2=R^2,\,(R>0)$
@@ -560,18 +575,9 @@ $$(x,y)\;\to\;(\rho\cos\theta,\rho\sin\theta)\quad
 	
 {\bf 思考：}将极坐标方程化为平面直角方程应注意些什么？
 
-\vspace{4em}
+\newpage
 
-{\bf 【课堂练习与思考题】}
-
-\begin{itemize}
-  \item 习题1.1：(C)应用题
-  \item 习题1.2：3，17
-  \item 习题1.3：6
-  \item 阅读：李开复，《给未来的你》
-\end{itemize}
-
-{\bf 【课后作业】}
+\section*{课后作业}
 	
 \begin{itemize}
   \item 习题1.1：4(2)，10
@@ -586,3 +592,143 @@ $$(x,y)\;\to\;(\rho\cos\theta,\rho\sin\theta)\quad
   \item 给出P23例14中的三角波的函数表达式
   \item 习题1.3：5
 \end{itemize}
+
+{\bf 【课堂练习与思考题】}
+
+\begin{itemize}
+  \item 习题1.1：(C)应用题
+  \item 习题1.2：3，17
+  \item 习题1.3：6
+  \item 阅读：李开复，《给未来的你》
+\end{itemize}
+
+\newpage
+
+\section*{参考解答}
+
+1. 习题1.1：10，证明：
+$$\df{a_1+a_2+\cdots+a_n}n\geq\sqrt[n]{a_1a_2\cdots a_n},$$
+其中$a_i(i=1,2,\ldots,n)$均为非负实数。
+
+证明：易证$n=2$时不等式成立。假设对$n=2^k(k\in\mathbb{Z}_+)$不等式成立，则
+当$n=2^{k+1}$时，
+\begin{eqnarray*}
+	a_1+a_2+\cdots+a_{2^{k+1}}&\leq&2^k\sqrt[2^k]{a_1a_2\cdots a_{2^k}}
+	+2^k\sqrt[2^k]{a_{2^k+1}+a_{2^k+2}+\cdots+a_{2^{k+1}}}\\
+	&\geq&2\cdot 2^k\sqrt{\sqrt[2^k]{a_1a_2\cdots a_{2^k}}\cdot
+	\sqrt[2^k]{a_{2^k+1}+a_{2^k+2}+\cdots+a_{2^{k+1}}}}\\
+	&=&2^{k+1}\sqrt[2^{k+1}]{a_1a_2\cdots a_{2^{k+1}}}
+\end{eqnarray*}
+由数学归纳法，可知当$n$取$2$的整数次幂时，不等式成立。
+
+若$n$不等于$2$
+的某个整数次幂，不妨设$2^{k-1}<n<2^k(k\in\mathbb{N})$，于是
+\begin{eqnarray*}
+	& &a_1+a_2+\cdots+a_n+\left(2^k-n)\sqrt[n]{a_1a_2\cdots a_n}\right)\\
+	& & \quad\geq 2^k\sqrt[2^k]{a_1a_2\cdots a_n\left(\sqrt[n]{a_1a_2\cdots
+	a_n}\right)^{2^k-n}}\\
+	& &\quad =2^k\sqrt[n]{a_1a_2\cdots a_n}
+\end{eqnarray*}
+以上不等式稍加整理即证。
+
+\bigskip
+
+2.给出P9例6中二维球极投影映射中：
+  
+（1）$Q$的极坐标与$P$的横坐标的对应关系；
+  
+（2）$Q$的坐标与$P$的坐标的对应关系；
+  
+（3）描述如何将一个单位球面映射为一个二维平面，给出相应的坐标对应关系。
+
+解：
+\begin{center}
+	\resizebox{!}{5cm}{\includegraphics{./images/ch1/answer/sphereline2D.pdf}}\quad
+	\resizebox{!}{5cm}{\includegraphics{./images/ch1/answer/sphereline3D.pdf}}
+\end{center}
+(1)(2) 如左图，设$P,Q$的坐标分别$(x_P,0),(x_Q,y_Q)$，则有
+$$
+\left\{
+\begin{array}{l}
+	x^2_Q+y^2_Q=1\\
+	\df{x_Q}{x_P}+y_Q=1
+\end{array}
+\right.
+$$
+由此可解得
+$$y_Q=\df{1-x^2_P}{1+x^2_P},\quad x_Q=\df{2x_P^3}{1+x^2_P}.$$
+进而可知$Q$的极坐标为$(1,\theta)$，其中
+$$\theta=
+\left\{
+\begin{array}{ll}
+	\arctan\df{2x^3_P}{1-x^2_P},& x_P>0\\
+	\pi+\arctan\df{2x^3_P}{1-x^2_P}, & x_P<0
+\end{array}
+\right.
+$$
+(3)如右图，设$P,Q$的坐标分别$(x_P,y_P,0),(x_Q,y_Q,z_Q)$，则有
+$$
+\left\{
+\begin{array}{l}
+	x^2_Q+y^2_Q+z^2_Q=1\\
+	\df{x_Q}{x_P}=\df{y_Q}{y_P}=1-z_Q
+\end{array}
+\right.
+$$
+由此可解得
+$$
+\left\{
+\begin{array}{l}
+	x_Q=\df{2x_P(x^2_P+y^2_P)}{1+x^2_P+y^2_P}\\
+	y_Q=\df{2y_P(x^2_P+y^2_P)}{1+x^2_P+y^2_P}\\
+	z_Q=\df{1-x^2_P-y^2_P}{1+x^2_P+y^2_P}
+\end{array}
+\right.
+$$
+
+\bigskip
+
+3.习题1.2：8，题略
+
+\begin{center}
+	\resizebox{!}{6cm}{\includegraphics{./images/ch1/answer/lx.pdf}}
+	
+	$y=\ln(x+\sqrt{1+x^2})$的函数图像
+\end{center}
+
+\bigskip
+
+4.习题1.2：17，题略
+
+参考答案：
+$$f_c(x)=\df12\left(|f(x)+C|-|f(x)-C|\right)$$
+
+\bigskip
+
+5. 习题5.2：3，证明恒等式
+
+(1)$3\arccos x-\arccos(3x-4x^3)=\pi,\left(|x|\leq\df12\right)$
+
+(2)$2\arctan x+\arcsin\df{2x}{1+x^2}=\pi,(x>1)$
+
+证：(1)注意到
+$$\cos(3\arccos x)=4[\cos(\arccos x)]^3-3\cos(\arccos
+x)=4x^3-3x=\cos[\pi-\arccos(3x-4x^3)].$$
+由此可知
+$$3\arccos x=2k\pi-\pi+\arccos(3x-4x^3)\quad(k\in\mathbb{Z}).$$
+又当$|x|\leq\df12$时，$|3x-4x^3|\leq 1$，进而
+$$\pi+\arccos(3x-4x^3)\in[\pi,2\pi],\quad 3\arccos x\in[\pi,2\pi].$$
+从而可知必有
+$$3\arccos x=\pi+\arccos(3x-4x^3),$$
+即证。
+
+(2)由于
+$$\sin(2\arctan x)=\df{2\tan(\arctan x)}{1+\tan^2(\arctan
+x)}=\df{2x}{1+x^2}=\sin\left(\pi-\arcsin\df{2x}{1+x^2}\right)$$
+从而可知
+$$2\arctan x=2k\pi+\pi-\arcsin\df{2x}{1+x^2}\quad(k\in\mathbb{Z}).$$
+又当$x>1$时，$2\arctan x\in\left(\df{\pi}2,\pi\right),\df{2x}{1+x^2}\in(0,1)$，进而
+$$\pi-\arcsin\df{2x}{1+x^2}\in\left(\df{\pi}2,\pi\right),$$
+由此可知必有
+$$2\arctan x=\pi-\arcsin\df{2x}{1+x^2},$$
+即证。
