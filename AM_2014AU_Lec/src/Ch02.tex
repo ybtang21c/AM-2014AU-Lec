@@ -106,6 +106,8 @@ $$\limn\left(\df n{n+1}\right)^2=1$$
 
 {\bf 思考：}已知$|q|>1$时，$\{q^n\}$发散，请问该如何证明？
 
+{\bf 注：}利用有界性，也可以证明发散。
+
 \begin{shaded}
 	{\bf 【极限定义的反面说法】}
 	
@@ -117,6 +119,8 @@ $$\limn\left(\df n{n+1}\right)^2=1$$
 	{\bf P51，例5：}证明$\{(-1)^n\}$发散。 
 	
 	{\bf 注：}对比教材上的证明方法与用反面说法证明的区别。
+	
+	{\bf 思考：}数列发散可能有哪些不同的情形？（趋向无穷，或振荡）
 	
 \end{shaded}
 
@@ -143,6 +147,11 @@ $$\limn\left(\df n{n+1}\right)^2=1$$
 
 {\bf 典型方法：}利用$\e$的特定取值控制无穷的部分，剩余的有限集自然是有界的
 
+{\bf 例：}讨论$\{\sqrt[n]{n!}\}$的敛散性。
+
+{\bf hint:}注意到$\forall a>0$，当$n$充分大时，$n!>a^n$，故$\{\sqrt[n]{n!}\}$无界，
+从而发散。
+
 \subsubsection{【保号性】}
 
 {\bf 定理2.1.3：}设$\lim\limits_{n\to\infty}a_n>0$，则$\exists N>0$，
@@ -159,7 +168,12 @@ $$\limn\left(\df n{n+1}\right)^2=1$$
   设$\lim\limits_{n\to\infty}a_n=a$， 且最多有有限个$a_n$小于零， 则$a\geq 0$
 \end{enumerate}	
 
-\subsubsection{【四则运算的性质】}
+{\bf 注：}保号性的实质，是极限运算保持不等号的方向不变
+$$a_n\geq b_n\,(n\in\mathbb{Z}_+)\Rightarrow\limn a_n\geq\limn b_n$$
+
+\section{数列极限的性质与判敛}
+
+\subsection{四则运算的性质}
 
 {\bf 定理2.2.1：}\ps{强调：只对有限次的四则运算有效！！！}
 设数列$\{a_n\},\{b_n\}$分别以$a,b(b\neq 0)$为极限，则
@@ -171,7 +185,15 @@ $$\limn\left(\df n{n+1}\right)^2=1$$
   \item $\limn\df{a_n}{b_n}=\df ab$
 \end{enumerate}
 
-{\bf 注：}极限运算和四则运算可以交换次序——前提是极限存在
+{\bf 注：}极限运算和四则运算可以交换次序——前提是极限存在，且为有限次四则运算
+
+{\bf 例：}
+\begin{eqnarray*}
+	1&=&\limn \underbrace{\left(\df 1n+\df 1n+\cdots+\df 1n\right)}_{n}\\
+	&=&\underbrace{\limn\df1n+\limn\df1n+\cdots+\limn\df1n}_{n}\\
+	&=&n\limn\df1n=0
+\end{eqnarray*}
+$n$落在了极限符号之外，显然错误！！
 
 {\bf P58-例2：}计算极限
 $$\limn\df{2n^6+3n^4-n+10}{n^6+n^4+1}$$
@@ -181,11 +203,13 @@ $$\limn\df{2n^6+3n^4-n+10}{n^6+n^4+1}$$
 {\bf 例：}计算极限
 $$\limn\df{\cos^n\theta-\sin^n\theta}{\cos^n\theta+\sin^n\theta}\quad
 (0\leq\theta\leq\df{\pi}{2})$$
-	  	
+
+{\bf 定理2.2.1'：}初等函数运算可以和极限运算交换次序。
+
 {\bf 例：}设$a_n>0(n\in\mathbb{N})$，$\limn a_n=a$，证明：
 $$\limn\sqrt{a_n}=\sqrt a$$
 
-\section{数列极限的性质与判敛}
+{\bf hint:} 若$a=0$，对$\e^2$，取$N$即可。
 
 \subsection{子数列的收敛性}
 
@@ -198,11 +222,11 @@ $$\{a_{n_k}\}:\,a_{n_1},a_{n_2},\ldots,a_{n_k},\ldots$$
 
 {\bf 定理2.2.2：}数列收敛，当且仅当其任意子数列收敛，且极限相同。
 
-即：对任意严格单调递增的正整数数列$\{n_k\}$，\ps{强调$k$变化而不是$n$变化}
+即：对任意严格单调递增的正整数数列$\{n_k\}$，
 $$\limn a_n=a\Leftrightarrow\lim_{k\to\infty}a_{n_k}=a$$
 $\{a_{n_k}\}$收敛于$a$的定义： $\forall \e>0$， $\exists
 {K}$， $\forall {k>K}$， 有 $$|a_{{{n_k}}}-a|<\e,$$
- 记为
+ 记为\ps{强调$k$变化而不是$n$变化}
 $$\lim\limits_{{k\to\infty}}a_{n_k}=a\quad \mbox{或}\quad a_{n_k}\to
 a\;{(k\to\infty)}$$
 
@@ -230,6 +254,9 @@ $\{a_{3n+2}\}$收敛于相同的极限。
 \end{center}
 
 {\bf P61，例5：}证明$\limn [(n+1)^k-{n}^k]=0$，其中$0<k<1$。
+
+{\bf hint:}$n^k\left[\left(1+\df1n\right)^k-1\right]
+<n^k\left(1+\df1n-1\right)=n^{k-1}\to 0\;(n\to\infty)$
 
 {\bf P61，例6：}设$a>0$为常数，证明$\limn \sqrt[n]{a}=1$。
 
@@ -297,7 +324,19 @@ $$\limn\df{a_1+a_2+\ldots+a_n}{n}=\limn a_n$$
   \item $\limn\df{1+\sqrt 2+\sqrt[3]{3}+\ldots+\sqrt[n]{n}}{n}$ 
   \item $\limn\df{1^k+2^k+\ldots+n^k}{n^{k+1}},\quad(k\in\mathbb{N})$ 
   \item $\limn\left(\df{1^k+2^k+\ldots+n^k}{n^{k}}-\df
-  n{k+1}\right),\quad(k\in\mathbb{N})$
+  n{k+1}\right),\quad(k\in\mathbb{N})$\\
+  {\bf 提示:}（3）
+  \begin{eqnarray*}
+  	\mbox{原式}&=&\limn\df{(k+1)(1^k+2^k+\cdots+n^k)-n^{k+1}}{n^k(k+1)}\\
+  	&=&\limn\df{(k+1)(n+1)^k-[(n+1)^{k+1}-n^{k+1}]}{(k+1)[(n+1)^k-n^k]}\\
+  	&=&\limn\df{(k+1)[n^k+kn^{k-1}+P_{k-2}^{(1)}(n)]
+  	-\left[(n+1)^k+(n+1)^{k-1}n+\cdots+n^k\right]}{(k+1)
+  	\left[(n+1)^{k-1}+(n+1)^{k-2}n+\cdots+n^{k-1}\right]}\\
+  	&=&\limn\df{(k+1)[n^k+kn^{k-1}+P_{k-2}^{(1)}(n)]-(k+1)n^k
+  	-\df{k(k+1)}2n^{k-1}-P_{k-2}^{(2)}(n)}
+  	{(k+1)\left[\df{k(k+1)}{2}n^{k-1}+P_{k-2}^{(3)}(n)\right]}\\
+  	&=&\df12
+  \end{eqnarray*}
 \end{enumerate}
 
 \end{shaded}
@@ -461,7 +500,13 @@ $$0<\df 1n<\df 1{n^p},\quad (0<p<1),$$
 $$\df{a_{n+1}}{a_n}\leq\df{b_{n+1}}{b_n},$$
 则若$\sumn b_n$收敛，$\sumn a_n$收敛。
 
+{\bf 【hint】：}
+$$a_{n+1}\leq\df{a_1}{b_1}b_{n+1}$$
+
 {\bf 例：}讨论级数$\sumn\df{n^n}{t^nn!}$的敛散性。
+
+{\bf 【hint】：}
+$$\df{a_{n+1}}{a_n}=\df{\left(1+\df1n\right)^n}{t}\to\df et$$
 
 {\bf 课后思考}（2012年全国大学生数学竞赛）
 $\sumn a_n$和$\sumn b_n$均为正项级数，证明：
@@ -522,7 +567,7 @@ $$\sumn\df{2+(-1)^n}{n^2}$$
 
 {\bf 注：}
 \begin{itemize}
-  \item \setlength{\itemindent}{1cm}
+  \setlength{\itemindent}{1cm}
   \item 和比值法类似，$q=1$时，无法判定级数的敛散性
   \item
   但是，可以证明：若$\limn\df{a_{n+1}}{a_n}=q$，则必有$\limn\sqrt[n]{a_n}=q$，请问：
@@ -554,6 +599,12 @@ $$\limn n\left(\df{a_n}{a_{n+1}}-1\right)=r,$$
   \item $\sumn\df{n!}{(x+1)\ldots(x+n)}\;(x>0)$
 \end{enumerate}
 
+{\bf 【hint】：}(1)
+$$R_n=n\left[\df{(2n+2)(2n+3)}{(2n+1)(2n+1)}-1\right]
+=\df{n(6n+5)}{(2n+1)^2}\to\df32>1\;(n\to\infty)$$
+(2)
+$$R_n=n\left[\df{n+x}{n+1}-1\right]=\df{n(x-1)}{n+1}$$
+
 {\bf 不等式形式：}设$a_n\geq 0\,(n=1,2,\ldots)$，定义
 $$R_n=n\left(\df{a_n}{a_{n+1}}-1\right),$$
 若存在$r>1$，当$n$充分大时，总有$R_n\geq r$，则$\sumn a_n$收敛；
@@ -561,6 +612,11 @@ $$R_n=n\left(\df{a_n}{a_{n+1}}-1\right),$$
 
 {\bf 例：}判断以下级数的敛散性
 $$\sumn\df{\sqrt{n!}}{(2+\sqrt 1)(2+\sqrt 2)\ldots(2+\sqrt n)}$$
+
+{\bf 【hint】：}记$a_n=\df{\sqrt{n!}}{(2+\sqrt 1)(2+\sqrt 2)\ldots(2+\sqrt n)}$，
+从而
+$$n\left(\df{a_n}{a_{n+1}}-1\right)=\df{2n}{\sqrt{n+1}}\to\infty\;(n\to\infty)$$
+从而易知该级数发散。
 
 \end{shaded}
 

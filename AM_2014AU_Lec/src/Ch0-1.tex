@@ -610,7 +610,7 @@ $$(x,y)\;\to\;(\rho\cos\theta,\rho\sin\theta)\quad
 $$\df{a_1+a_2+\cdots+a_n}n\geq\sqrt[n]{a_1a_2\cdots a_n},$$
 其中$a_i(i=1,2,\ldots,n)$均为非负实数。
 
-证明：易证$n=2$时不等式成立。假设对$n=2^k(k\in\mathbb{Z}_+)$不等式成立，则
+证法一：易证$n=2$时不等式成立。假设对$n=2^k(k\in\mathbb{Z}_+)$不等式成立，则
 当$n=2^{k+1}$时，
 \begin{eqnarray*}
 	a_1+a_2+\cdots+a_{2^{k+1}}&\leq&2^k\sqrt[2^k]{a_1a_2\cdots a_{2^k}}
@@ -624,13 +624,26 @@ $$\df{a_1+a_2+\cdots+a_n}n\geq\sqrt[n]{a_1a_2\cdots a_n},$$
 若$n$不等于$2$
 的某个整数次幂，不妨设$2^{k-1}<n<2^k(k\in\mathbb{N})$，于是
 \begin{eqnarray*}
-	& &a_1+a_2+\cdots+a_n+\left(2^k-n)\sqrt[n]{a_1a_2\cdots a_n}\right)\\
+	& &a_1+a_2+\cdots+a_n+\left(2^k-n\right)\sqrt[n]{a_1a_2\cdots a_n}\\
 	& & \quad\geq 2^k\sqrt[2^k]{a_1a_2\cdots a_n\left(\sqrt[n]{a_1a_2\cdots
 	a_n}\right)^{2^k-n}}\\
 	& &\quad =2^k\sqrt[n]{a_1a_2\cdots a_n}
 \end{eqnarray*}
 以上不等式稍加整理即证。
 
+证法二：易证$n=2$时不等式成立。以下假设$n=k$时不等式也成立，即
+$$\df{a_1+a_2+\cdots+a_k}{k}\geq\sqrt[k]{a_1a_2\cdots a_k}.$$
+当$n=k+1$时，记$t=a_1+a_2+\cdots+a_k$，且不妨设$a_{k+1}=\max\{a_1,a_2,
+\cdots,a_{k+1}\}$，即$ka_{k+1}\geq t$，也是
+\begin{eqnarray*}
+	\left(\df{a_1+a_2+\cdots+a_{k+1}}{k+1}\right)^{k+1}
+	&=&\left(\df{t+a_{k+1}}{k+1}\right)^{k+1}
+	=\left[\df tk+\df{ka_{k+1}-t}{k(k+1)}\right]^{k+1}\\
+	&\geq&C_{k+1}^0\left(\df tk\right)^{k+1}+C_{k+1}^1\left(\df tk\right)^k
+	\df{ka_{k+1}-t}{k(k+1)}\\
+	&=&\left(\df tk\right)^ka_{k+1}\geq a_1a_2\cdots a_{k+1}
+\end{eqnarray*}
+即证。
 \bigskip
 
 2.给出P9例6中二维球极投影映射中：
@@ -661,8 +674,8 @@ $$y_Q=\df{1-x^2_P}{1+x^2_P},\quad x_Q=\df{2x_P^3}{1+x^2_P}.$$
 $$\theta=
 \left\{
 \begin{array}{ll}
-	\arctan\df{2x^3_P}{1-x^2_P},& x_P>0\\
-	\pi+\arctan\df{2x^3_P}{1-x^2_P}, & x_P<0
+	\arctan\df{1-x^2_P}{2x^3_P},& x_P>0\\
+	\pi+\arctan\df{1-x^2_P}{2x^3_P}, & x_P<0
 \end{array}
 \right.
 $$
