@@ -572,8 +572,11 @@ $$\sumn\df{2+(-1)^n}{n^2}$$
   \item 和比值法类似，$q=1$时，无法判定级数的敛散性
   \item
   但是，可以证明：若$\limn\df{a_{n+1}}{a_n}=q$，则必有$\limn\sqrt[n]{a_n}=q$，请问：
-  这意味着比值和根植法哪一个的适用范围更广？（答：根植）
+  这意味着比值和根植法哪一个的适用范围更广？（答：根植）\ps{利用该结论可以证明$\df{\sqrt[n]n}n\to e$}
 \end{itemize}
+
+{\bf [hint]:} let $x_n=\df{n^n}{n!}$, we have
+$$\df{x_{n}}{x_{n+1}}\to e(n\to\infty)$$
 
 {\bf P86-例8：}判断下列级数的收敛性
 \begin{enumerate} [(1)]
@@ -637,8 +640,9 @@ $$\sumn(-1)^na_n$$
 \begin{enumerate} [(1)]
   \setlength{\itemindent}{1cm}
   \item $\sumn(-1)^{n-1}\df{2^nn!}{n^n}$ 
-  \item $\sumn(-1)^n\df{\sqrt{n}}{n+100}$ 
-  \item $\sumn\sin\left(\pi\sqrt{n^2+k^2}\right)$
+  \item $\sumn(-1)^n\df{\sqrt{n}}{n+100}$\hfill{($n>10$,$a_n$ mono-decrease to
+  zero)}
+  \item $\sumn\sin\left(\pi\sqrt{n^2+k^2}\right),(k\in\mathbb{Z}_+)$
 \end{enumerate}
 
 \subsection{绝对收敛与条件收敛}
@@ -671,6 +675,21 @@ $$\sumn(-1)^na_n$$
 {\bf 例：}判断以下级数的敛散性
 $$\sumn\df{\sin nx}n$$
 
+{\bf [hint]:}
+let $a_n=\df1n,b_n=\sin nx$. For
+\begin{eqnarray*}
+&&\sin\df x2(\sin x+\sin2x+\cdots+\sin nx)\\
+&=&\df12\left[\left(\cos\df x2-\cos\df{3x}2\right)+
+\left(\cos\df {3x}2-\cos\df{5x}2\right)+\cdots+
+\left(\cos\df {2n-1}2x-\cos\df{n+1}2x\right)\right]\\
+&=&\df12\left(\cos\df{3x}2-\cos\df{2n+1}2x\right),
+\end{eqnarray*}
+so we have
+$$\left|\sum\limits_{i=1}^n\sin ix\right|
+\leq\df{\left|\cos\df{3x}2-\cos\df{2n+1}2x\right|}{2\left|\sin\df x2\right|}
+\leq\df1{\left|\sin\df x2\right|},$$
+which is bounded for given $x$.
+
 {\bf Abel判别法：}若数列$\{a_n\}$单调有界，$\sumn b_n$收敛，则$\sumn a_nb_n$收敛。
 
 {\bf 例：}判断以下级数的敛散性
@@ -701,8 +720,8 @@ $$\sumn(-1)^n\left(1+\df 1n\right)^n\df{1}{\sqrt n}$$
   收敛 \hfill ({$\times$})
   \item 若以上$\limn a_n=0$，则以上级数收敛 \hfill
   ({$\surd$})
-  \item $\sumn a_n$收敛，$\limn b_n=1\Rightarrow\sumn a_nb_n$收敛
-  \hfill ({$\times$})
+  \item $\sumn a_n$收敛，$\limn b_n=1\Rightarrow\sumn
+  a_nb_n$收敛($a_n=\df{(-1)^n}{n},b_n=1+a_n$) \hfill ({$\times$})
   \item $\sumn a_n$部分和有界，$\limn b_n=0\Rightarrow\sumn a_nb_n$收敛
   \hfill ({$\times$})
   \item 若$\limn\df{a_n}{b_n}=1$，则若$\sumn a_n$绝对收敛，$\sumn b_n$必收敛 \hfill
@@ -718,17 +737,19 @@ $$\sumn(-1)^n\left(1+\df 1n\right)^n\df{1}{\sqrt n}$$
 {\bf 例：}判断下列级数的敛散性
 \begin{enumerate}[(1)]
   \setlength{\itemindent}{1cm}
-  \item $\sumn\df{2^nn!}{n^n}$
+  
   \item $\df 1{a+b}+\df 1{2a+b}+\df 1{3a+b}+\ldots\quad (a>0,b>0)$
-  \item $\sumn\df{1!+2!+\ldots+n!}{n!}$
-  \item $\sumn\left[\df 1n-\ln\left(1+\df 1n\right)\right]$
-  \item $\sumn\df{\sqrt{n!}}{(2+\sqrt 1)(2+\sqrt 2)\ldots(2+\sqrt n)}$
-  \item $\sumn\df{\sqrt{n+1}-\sqrt{n}}{n^p}\quad(p>0)$
-  \item $\sumn\df{n^{n+\frac 1{\,n\,}}}{\left(n+\df 1n\right)^n}$
-  \item $\sumn n!\left(\df{x}{n}\right)^n\quad (x>0)$
   \item $\sumn\df {a_n}{(1+a_1)(1+a_2)\ldots(1+a_n)}\quad(a_n\geq
 	  0,n\in\mathbb{N})$
+%   \item $\sumn\df{1!+2!+\ldots+n!}{n!}$
+  
+%   \item $\sumn\df{\sqrt{n!}}{(2+\sqrt 1)(2+\sqrt 2)\ldots(2+\sqrt n)}$
+  \item $\sumn\df{\sqrt{n+1}-\sqrt{n}}{n^p}\quad(p>0)$
   \item $\sumn\df{n^{n+\frac 1{\,n\,}}}{\left(n+\df 1n\right)^n}$
+  \item $\sumn\df{2^nn!}{n^n}$
+  \item $\sumn n!\left(\df{x}{n}\right)^n\quad (x>0)$(*)
+  \item $\sumn\left[\df 1n-\ln\left(1+\df 1n\right)\right]$(*)
+%   \item $\sumn\df{n^{n+\frac 1{\,n\,}}}{\left(n+\df 1n\right)^n}$
 \end{enumerate}
 
 \newpage
