@@ -363,6 +363,29 @@ $$\sum\limits_{k=1}^{\infty}a_k
   \item $\sumn (-1)^n$
 \end{enumerate}
 
+\begin{shaded}
+{\bf 【关于调和级数】}
+
+调和级数发散的速度慢得让人有些不可思议，调和级数的前$1000$项的和约为$7.485$，
+前$100$万项的和约为$14.357$，前$10$亿项的和约为$21$，前一万亿项和约为$28$，
+当它的和超过$100$时，如果每一项在纸带上只占$1$毫米，我们必须使用$10^43$毫米长
+的纸带，这大约是$10^25$光年，而宇宙估计尺寸只有$10^12$光年，因此也难怪大家都会认为它是收敛的。
+
+{\bf 【Eular常数】}
+
+{\it Eular常数最先由瑞士数学家莱昂哈德·欧拉(Leonhard Euler)
+在1735年发表的文章 De Progressionibus harmonicus observationes 中定义。
+欧拉曾经使用C作为它的符号，并计算出了它的前6位小数。1761年他又将该值计算到了16位小数。}
+$$\gamma=\limn\left[\sum\limits_{k=1}^n\df1k-\ln n\right]
+=\int_1^{\infty}\left(\df1{[x]}-\df1x\right)\d x$$
+由不等式$\ln(1+x)<x,(x\in(-1,+\infty),x\ne 0)$，
+$$S_n=\sum\limits_{k=1}^n\df1k-\ln n>\sum\limits_{k=1}^n
+\ln\left(1+\df1k\right)-\ln n=\ln(n+1)-\ln n>0.$$
+$$S_n-S_{n+1}=\ln(n+1)-\ln n-\df1{n+1}>-\left(-\df1{n+1}\right)
+-\df1{n+1}=0.$$
+由单调有界原理可知$\{S_n\}$收敛。
+\end{shaded}
+
 \subsection{收敛级数的性质}
 
 \begin{enumerate}[{\bf 【性质1】}]
@@ -575,6 +598,27 @@ $$\sumn\df{2+(-1)^n}{n^2}$$
   这意味着比值和根植法哪一个的适用范围更广？（答：根植）\ps{利用该结论可以证明$\df{\sqrt[n]n}n\to e$}
 \end{itemize}
 
+% \newpage
+
+\begin{shaded}
+Assume $a_n\geq 0(n\in\mathbb{Z}+)$, if $\limn\df{a_{n+1}}{a_n}=q$, then
+$\limn\sqrt[n]{a_n}=q$.
+
+{\bf proof:} For $\limn\df{a_{n+1}}{a_n}=q$, $\forall \e>0$, $\exists
+N\in\mathbb{Z}$, $\forall n\geq N$, such that
+$$\left|\df{a_{n+1}}{a_n}-q\right|<\e,$$
+hence
+$$0<a_{n+1}<(q+\e)a_n<(q+\e)^2a_{n-1}<\ldots<(q+\e)^{n-N+1}a_N.$$
+Then
+$$\sqrt[n+1]{a_{n+1}}<\sqrt[n+1]{(q+\e)^{n-N+1}a_N}=(q+\e)
+\sqrt[n+1]{(q+\e)^Na_N}\to(q+\e)\;(n\to\infty),$$
+that is
+$$|\sqrt[n+1]{a_{n+1}}-q|<\e.$$
+Thus we know $\limn\sqrt[n]{a_n}=q$.
+\end{shaded}
+
+% \newpage
+
 {\bf [hint]:} let $x_n=\df{n^n}{n!}$, we have
 $$\df{x_{n}}{x_{n+1}}\to e(n\to\infty)$$
 
@@ -690,6 +734,11 @@ $$\left|\sum\limits_{i=1}^n\sin ix\right|
 \leq\df1{\left|\sin\df x2\right|},$$
 which is bounded for given $x$.
 
+Then for
+$$\left|\df{\sin nx}n\right|\geq\df{\sin^2nx}n=\df1{2n}-\df{\cos2nx}{2n},$$
+and $\sumn\df1{2n}$ diverges, $\sumn\df{\cos2nx}{2n}$ converges, we know
+$$\sumn\df{\sin nx}n$$ isn't absolute convergence.
+
 {\bf Abel判别法：}若数列$\{a_n\}$单调有界，$\sumn b_n$收敛，则$\sumn a_nb_n$收敛。
 
 {\bf 例：}判断以下级数的敛散性
@@ -721,7 +770,7 @@ $$\sumn(-1)^n\left(1+\df 1n\right)^n\df{1}{\sqrt n}$$
   \item 若以上$\limn a_n=0$，则以上级数收敛 \hfill
   ({$\surd$})
   \item $\sumn a_n$收敛，$\limn b_n=1\Rightarrow\sumn
-  a_nb_n$收敛($a_n=\df{(-1)^n}{n},b_n=1+a_n$) \hfill ({$\times$})
+  a_nb_n$收敛($a_n=\df{(-1)^n}{\sqrt n},b_n=1+a_n$) \hfill ({$\times$})
   \item $\sumn a_n$部分和有界，$\limn b_n=0\Rightarrow\sumn a_nb_n$收敛
   \hfill ({$\times$})
   \item 若$\limn\df{a_n}{b_n}=1$，则若$\sumn a_n$绝对收敛，$\sumn b_n$必收敛 \hfill
@@ -745,9 +794,13 @@ $$\sumn(-1)^n\left(1+\df 1n\right)^n\df{1}{\sqrt n}$$
   
 %   \item $\sumn\df{\sqrt{n!}}{(2+\sqrt 1)(2+\sqrt 2)\ldots(2+\sqrt n)}$
   \item $\sumn\df{\sqrt{n+1}-\sqrt{n}}{n^p}\quad(p>0)$
-  \item $\sumn\df{n^{n+\frac 1{\,n\,}}}{\left(n+\df 1n\right)^n}$
+  \item $\sumn\df{n^{n+\frac 1{\,n\,}}}{\left(n+\df 1n\right)^n}$\\
+  {\bf [hint]:}
+  $$a_n=\df{n^{\df1n}}{\left(1+\df1{n^2}\right)^n}\to1\;(n\to\infty)$$
   \item $\sumn\df{2^nn!}{n^n}$
-  \item $\sumn n!\left(\df{x}{n}\right)^n\quad (x>0)$(*)
+  \item $\sumn n!\left(\df{x}{n}\right)^n\quad (x>0)$\\
+  {\bf [hint]:} When $x=e$
+  $$\df{a_{n+1}}{a_n}=\df e{\left(1+\df1n\right)^n}>1.$$
   \item $\sumn\left[\df 1n-\ln\left(1+\df 1n\right)\right]$(*)
 %   \item $\sumn\df{n^{n+\frac 1{\,n\,}}}{\left(n+\df 1n\right)^n}$
 \end{enumerate}
@@ -759,7 +812,24 @@ $$\sumn(-1)^n\left(1+\df 1n\right)^n\df{1}{\sqrt n}$$
 \begin{itemize}
   \item 习题2.1：2，6(1,3)，7，9
   \item 已知数列$\{a_n\}$单调递增，它的一个子列$\{a_{n_k}\}$收敛于$a$，
-  证明：$\limn a_n=a$。
+  证明：$\limn a_n=a$。\\
+  {\bf Pf1:} 由$a_{n_k}\to a(k\to\infty)$，对$\forall\e>0$，$\exists K$，
+  $\forall k>K$，$|a_{n_k}-a|<\e$，或
+  $$a_{n_k}\in U(a,\e).$$
+  令$N=n_{[K]+1}$，则对$\forall n>N$，注意到$\{a_n\}$单调递增，故一定
+  $\exists k>K$，使得$a_na_{n_k}\leq n<a_{n_{k+1}}$，进而
+  $$a_n\in[a_{n_k},a_{n_{k+1}})\subset U(a,\e),$$
+  即证。\\
+  {\bf Pf2:} 由$\{a_n\}$单调递增，对$\forall n\in\mathbb{Z}_+$，
+  $\exists k\in\mathbb{Z}_+$，使得
+  $$a_{n_k}\leq n<a_{n_{k+1}}.$$
+  定义两个数列
+  $$a_n^{(1)}=a_{n_k},\;\mbox{若}a_{n_k}\leq n<a_{n_{k+1}},$$
+  $$a_n^{(2)}=a_{n_{k+1}},\;\mbox{若}a_{n_k}\leq n<a_{n_{k+1}},$$
+  则
+  $$a_n^{(1)}\leq a_n<a_n^{(2)}.$$
+  注意到$\{a_n^{(1)}\},\{a_n^{(2)}\}$的取值范围和$\{a_{n_k}\}$完全相同，
+  且均单调递增，故易知其极限均为$a$。进而，有夹逼定理可知$a_n\to a(n\to\infty)$
   \item 证明：$\sqrt[n]n\to 1\,(n\to\infty)$。
   \item 习题2.2：1(4,6)，2(2,3)，3，7，9，11
   \item 习题2.3：4，5，6
@@ -773,13 +843,27 @@ $$\sumn(-1)^n\left(1+\df 1n\right)^n\df{1}{\sqrt n}$$
 \begin{itemize}
   \item 习题2.2：6，8，10，12，18
   \item 设$0<a_1<2$，且$(2-a_n)a_{n+1}=1\,(n\in\mathbb{N})$，
-  	证明$\{a_n\}$收敛，求其极限。
+  	证明$\{a_n\}$收敛，求其极限。\\
+  {\bf [hint]:} If $a_n=1$, then $a_{n+1}=1$. If $a_n<1$, then $a_{n+1}<1$.
+  If $a_n>2$, then $a_{n+1}<0$, thus $a_{n+2}<\df12$. If $a_n>1$, then 
+  $a_{n+1}>1$. So we have $a_n\in(0,2)$ for sufficient large $n$.\\
+  On the other hand, we have
+  $$a_{n+1}=\df{1-a_{n+1}}{1-a_n}.$$
+  Hence, we can deduce that $a_{n+1}<a_n$, whenever $a_n\in(0,1)$ or 
+  $a_n>1$. So $\{a_n\}$ is mono-increase with upper bound.\\
+  Let $a=\limn a_n$, we can find $a=1$.
   \item 设$x_1=\df 12$，$x_{n+1}=x_n^2+x_n\,(n\in\mathbb{N})$，求
 	$$\limn\left(\df 1{x_1+1}+\df 1{x_2+1}+\ldots+\df
 	1{x_n+1}\right)$$
+  {\bf [hint]:}$\df1{x_{n+1}}=\df1{x_n}-\df1{x_n+1}$, so we have
+  $$\df1{x_n+1}=\df1{x_n}-\df1{x_{n+1}}$$
   \item 已知$0<x<1$，数列$\{a_n\}$定义如下：
 	$$a_1=\df x2,\;a_n=\df x2-\df{a_{n-1}^2}2.$$
-	证明$\{a_n\}$收敛，并求其极限。
+	证明$\{a_n\}$收敛，并求其极限。\\
+  {\bf [hint]:} It's easy to find $a_2\in(0,a_1)$. Assume $a_{n}\in
+  (0,a_{n-1})$, then
+  $$a_n=\df x2-\df{a_{n-1}^2}2<\df x2-\df{a_{n}^2}2=a_{n+1}.$$
+  We can find $\limn a_n=\sqrt{x+1}-1$.
   \item 习题2.3：7，8 
   \item 习题2.4：10-15,17
   \item 习题2.5：4,6,10,13

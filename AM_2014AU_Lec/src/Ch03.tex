@@ -27,9 +27,18 @@
   x>X,|f(x)-A|<\e$
   \item $\limx{-\infty}f(x)=A\Leftrightarrow\forall \e>0,\exists X,\forall
   x<X,|f(x)-A|<\e$
-  \item $\limx{+\infty}f(x)=A\Leftrightarrow\forall \e>0,\exists X,\forall
+  \item $\limx{\infty}f(x)=A\Leftrightarrow\forall \e>0,\exists X,\forall
   |x|>X,|f(x)-A|<\e$
 \end{enumerate}
+
+{\bf 注：}趋于无穷的函数极限存在，意味着函数存在{\bf 水平渐近线}，例如
+$$y=\arctan x$$
+
+\begin{center}
+	\resizebox{!}{6cm}{\includegraphics{./images/ch3/arctan.pdf}}
+\end{center}
+
+{\bf 例：}证明$\limx{+\infty}\df1{\sqrt x}=0$.
 
 {\bf 注：}和$\limn a_n=a$的定义做类比，理解(1)，然后推广到(2),(3)。特别是有关的性质，如
 \begin{itemize}
@@ -93,19 +102,6 @@
 	{\bf 例：}证明：Dirichlet函数在任意点处无极限。
 \end{shaded}
 
-{\bf 课堂思考：}
-\begin{enumerate}[(1)]
-  \setlength{\itemindent}{1cm}
-  \item 若$x\to x_0$时，$f(x)$有极限，$g(x)$无极限，则当$x\to x_0$时，以下哪些函数必无极限：
-  $$f(x)g(x),\quad [g(x)]^2,\df{g(x)}{f(x)}, f(x)+g(x)$$ 
-  \item 若$\limx{x_0}g(x)=A,\lim\limits_{u\to A}f(u)=B$，是否必有
-  $$\limx{x_0}f[g(x)]=B\;?$$
-  \item 若$\limx{x_0}f(x)g(x)=0$，则当$x\to
-  x_0$时， $f(x),$ $g(x)$之一必趋于$0$ ({$\times$})
-\end{enumerate}
-
-{\bf 例：}设$\limx{x_0}f(x)=A$，用定义证明：$\limx{x_0}[f(x)]^3=A^3$
-
 \subsection{函数极限的基本性质}
 
 \subsubsection{【唯一性】}
@@ -143,6 +139,19 @@
   \item 有限次四则运算
   \item 可以推广到初等函数
 \end{itemize}
+
+{\bf 课堂思考：}
+\begin{enumerate}[(1)]
+  \setlength{\itemindent}{1cm}
+  \item 若$x\to x_0$时，$f(x)$有极限，$g(x)$无极限，则当$x\to x_0$时，以下哪些函数必无极限：
+  $$f(x)g(x),\quad [g(x)]^2,\df{g(x)}{f(x)}, f(x)+g(x)$$ 
+  \item 若$\limx{x_0}g(x)=A,\lim\limits_{u\to A}f(u)=B$，是否必有
+  $$\limx{x_0}f[g(x)]=B\;?$$
+  \item 若$\limx{x_0}f(x)g(x)=0$，则当$x\to
+  x_0$时， $f(x),$ $g(x)$之一必趋于$0$ ({$\times$})
+\end{enumerate}
+
+{\bf 例：}设$\limx{x_0}f(x)=A$，用定义证明：$\limx{x_0}[f(x)]^3=A^3$
 
 \section{函数极限的判敛}
 
@@ -192,6 +201,18 @@ $$\limx{x_0}f(x)=A.$$
 {\bf P120-例9}（重要极限一）证明：
 $$\limx{\infty}\left(1+\df 1x\right)^x=e$$
 
+\begin{shaded}
+{\bf 例}（另一种证明）令$f_u=x^ue^{-x}(x\geq 0)$，对于确定的$u$，证明：
+\begin{enumerate}[(1)]
+  \setlength{\itemindent}{1cm}
+  \item $f_u(x)$在$x=u$处取最大值；
+  \item 由$f_u(x)>f_u(u+1)$和$f_{u+1}(u+1)>f_u(u)$推出
+  $$\left(\df{u+1}u\right)^u<e<\left(\df{u+1}u\right)^{u+1}$$
+  \item $\df u{u+1}e<\left(\df{u+1}u\right)^u<e$，由此推出
+  $$\limx{+\infty}\left(1+\df 1u\right)^u=e$$
+\end{enumerate}
+\end{shaded}
+
 {\bf 例：}{\it 这些都是重要极限的应用，须牢记有关结果！！！}
 \begin{enumerate}[(1)]
   \setlength{\itemindent}{1cm}
@@ -205,6 +226,14 @@ $$\limx{\infty}\left(1+\df 1x\right)^x=e$$
 
 {\bf P121-例11}（重要极限二）证明：
 $$\limx{0}\df {\sin x}x=1$$
+
+{\bf [hint]:}
+\begin{center}
+	\resizebox{!}{5cm}{\includegraphics{./images/ch3/xsintan.pdf}}
+\end{center}
+
+如图，显然弧$AB$的长度大于直线$BD$，即$\sin\theta<\theta$；又扇形$ABO$的面积$\df12\theta$
+小于三角形$ACO$的面积$\df12\tan\theta$，从而$\theta<\tan\theta$
 
 {\bf 例：}{\it 牢记！！！}
 \begin{enumerate}[(1)]
@@ -224,7 +253,7 @@ $$\left|a_1+2a_2+\ldots+na_n\right|\leq 1$$
 
 \subsection{无穷大和无穷小}
 
-{\bf 定义3.3.1：}$f(x)$是$x\to\Delta$时的无穷小$\Rightarrow\limx{\Delta}f(x)=0$
+{\bf 定义3.3.1：}$f(x)$是$x\to\Delta$时的无穷小$\Leftrightarrow\limx{\Delta}f(x)=0$
 
 {\bf 注：}$\Delta$可任意代表$\infty,\;+\infty,\;-\infty,\;x_0,\;x_0^+,\;x_0^-$之一
 
@@ -237,11 +266,14 @@ $$\left|a_1+2a_2+\ldots+na_n\right|\leq 1$$
   \item 在同一过程中的有限个无穷小之和（积）仍为该过程中的无穷小
 \end{enumerate}
 
-{\bf 定义3.3.2：}$f(x)$是$x\to\Delta$时的无穷大$\Rightarrow\limx{\Delta}\df 1{f(x)}=0$，
+{\bf 定义3.3.2：}$f(x)$是$x\to\Delta$时的无穷大$\Leftrightarrow\limx{\Delta}\df 1{f(x)}=0$，
 可记为：
 $$\limx{\Delta}f(x)=\pm\infty$$
 
 {\bf 注：}无穷大有正负之分！！
+
+{\bf 【渐近线】：}$x\to x_0$时的无穷大意味着存在铅直渐近线；$x\to\pm\infty$时的无穷大
+{\it 可能}意味着存在斜渐近线
 
 {\bf P129-例4：}证明：$x+\sin x$是$x\to\infty$时的无穷大
 
@@ -257,7 +289,8 @@ $$\limx{\Delta}f(x)=\pm\infty$$
 
 \subsection{无穷小的比较}
 
-{\bf 定义3.3.3：}设$y_1,y_2$均为$x\to\Delta$时的无穷小，$\limx{\Delta}\df{y_1}{y_2}=A$为常数
+{\bf 定义3.3.3：}设$y_1,y_2$均为$x\to\Delta$时的无穷小，
+$\limx{\Delta}\df{y_1}{y_2}=A$为常数
 \begin{enumerate}[(1)]
   \setlength{\itemindent}{1cm}
   \item $A=0$，称$y_1$为$y_2$当$x\to\Delta$时的{\bf 高阶（高级）无穷小}，记为：
@@ -325,11 +358,18 @@ $$\limx{\Delta}y_1y_3=A\Leftrightarrow\limx{\Delta}y_2y_3=A$$
 
 {\bf 极限中的“加法因子”不能进行无穷小代换！}
 
-\subsection{渐近线}
+\subsection{斜渐近线}
 
-{\bf 自学！！}
+若$y=f(x)$当$x\to+\infty$时以$y=kx+b$为斜渐进线，则有
+$$k=\limx{+\infty}\df{f(x)}{x}=k,\quad b=\limx{+\infty}[f(x)-kx]$$
+
+{\bf 例：}求曲线$y^2-x^2=2x$的渐近线。
+
+{\bf P135-例10：}求函数$f(x)=\df{2x^2-3}{x+1}$的渐近线。
 
 \section{函数的连续性}
+
+\subsection{定义}
 
 {\bf 定义3.4.1：}函数$f(x)$在$x_0$连续：
 $$\limx{x_0}f(x)=f(x_0)$$
@@ -340,11 +380,13 @@ $$\limx{x_0}f(x)=f(x_0)$$
   \item $f(x_0)=f(x_0+0)=f(x_0-0)$
 \end{itemize}
 
-{\bf 注：}必要时，可以只考虑函数在某点一侧的连续性，即所谓左（右）连续，参见教材定义3.4.2-3
+{\bf 注：}必要时，可以只考虑函数在某点一侧的连续性，即所谓左（右）连续，
+参见教材定义3.4.2-3
 
-{\bf 例：}证明：$xD(x)$只在$x=0$处连续。
+{\bf 例：}证明：$f(x)=xD(x)$只在$x=0$处连续。
 
-{\bf P140-例3：}设$f(x)$在$(-\infty,+\infty)$上有定义，且对任意$x,y\in (-\infty,+\infty)$，有
+{\bf P140-例3：}设$f(x)$在$(-\infty,+\infty)$上有定义，
+且对任意$x,y\in (-\infty,+\infty)$，有
 $$f(x+y)=f(x)+f(y),$$
 则$f(x)$在$(-\infty,+\infty)$上连续，当且仅当$f(x)$在$x=0$连续。
 
@@ -364,7 +406,7 @@ $$f(x+y)=f(x)+f(y),$$
   \end{itemize}
 \end{enumerate}
 
-\subsection{连续函数的基本性质}
+\subsection{基本性质}
 
 {\bf 定理3.4.1-3.4.4：}
 \begin{enumerate}[(1)]
@@ -377,7 +419,7 @@ $$f(x+y)=f(x)+f(y),$$
 
 \subsection{连续函数在有界闭区间上的性质}
 
-\subsubsection{最值定理}
+\subsubsection{【最值定理】}
 
 {\bf 定理3.4.5：}设$f(x)\in C[a,b]$，则$f(x)$在$[a,b]$上可取到最大和最小值。
 
@@ -386,15 +428,15 @@ $$f(x+y)=f(x)+f(y),$$
 {\bf 例：}设$f(x)\in C[a,+\infty)$，且$\limx{+\infty}f(x)$存在，
 则$f(x)$在$[a,+\infty)$上有界。
 
-\subsubsection{介值定理}
+\subsubsection{【介值定理】}
 
 {\bf 定理3.4.6：}设$f(x)\in C[a,b]$，$M,m$分别为$f(x)$在$[a,b]$上的最大和最小值，
 则对任意$\gamma\in[m,M]$，存在$\xi\in[a,b]$，使得$f(\xi)=\gamma$。
 
-{\bf 推论：}（零值定理/零点存在性）
+{\bf 推论}（零值定理/零点存在性）
 设$f(x)\in C[a,b]$，且$f(a)f(b)<0$，则$f(x)$在$[a,b]$上必有零点。
 
-{\bf 推论'：}（零点存在性定理的推广）
+{\bf 推论'}（零点存在性定理的推广）
 \begin{enumerate}[(1)]
   \setlength{\itemindent}{1cm}
   \item 设$f(x)\in C(a,b)$，且$f(a+0)f(b-0)<0$，则$f(x)$在$(a,b)$内有零点。 
@@ -404,6 +446,44 @@ $$f(x+y)=f(x)+f(y),$$
 
 {\bf 例：}设$a_0\ne 0$，证明：以下方程至少有一个实根
 $$a_0x^{2n+1}+a_1x^{2n}+\ldots+a_{2n}x+a_{2n+1}=0.$$
+
+{\bf 例：}设$G$是第一象限内的一个有界区域（其边界为连续的简单闭曲线），$ABCD$表示
+它的一个外接矩形。矩形的一条边与$x$轴的夹角记为$\theta$，如果对于任意$\theta\in
+[0,\pi/2]$，$G$总可以被某个外接矩形所围，证明：至少存在某个$\theta_0\in[0,\pi/2]$，
+使得与之对应的外接矩形恰好为正方形。（{\it 推论：任一平面有界区域都可以内接于某个正方形}）
+
+\begin{center}
+	\resizebox{!}{6cm}{\includegraphics{./images/ch3/sqOut.pdf}}
+\end{center}
+
+{\bf [hint]:}记$l_1(\theta),l_2(\theta)$分别为$AB$和$BC$的长度，显然
+$$l_1(0)=l_2(\pi/2),\quad l_2(0)=l_1(\pi/2).$$
+令$f(\theta)=l_1(\theta)-l_2(\theta)$，由介值定理可以证明$f(\theta)$存在零点。
+
+{\bf 例：}证明：给定任意平面有界区域，以及一个向量，一定存在一条与该向量平行的直线
+平分该区域。
+
+{\bf 例：}证明：给定任意平面有界区域，一定存在两条相互垂直的直线，将其四等分。
+
+{\bf [hint]:} 设其中一条直线的极角为$\theta$，则另一条的为$\theta+\pi/2$。
+分别记两条直线为$l_{\theta}$和$l_{\theta+\pi/2}$，显然可以使得二者都平分给定区域。
+设此时四个区域的面积按顺时针方向依次为$S_1,S_2,S_3,S_4$，且由平分可满足
+$$A_1+A_2=A_3+A_4,\quad A_1+A_4=A2+A_3,$$
+
+\begin{center}
+	\resizebox{!}{6cm}{\includegraphics{./images/ch3/4cut.pdf}}
+\end{center}
+
+由此可得
+$$A_1=A_3,\quad A_2=A_4.$$
+进而，只需适当取$\theta$，使得$A_1=A_2$即可。
+
+记$f(\theta)=A_1(\theta)-A_2(\theta)$，不妨设$f(0)>0$，从而
+$$f(\pi/2)=A_1(\pi/2)-A_2(\pi/2)=A_4(0)-A_1(0)=A_2(0)-A_1(0)=-f(0)<0,$$
+由介值定理，即证。
+
+{\bf 例：}任意金属圆环上，总存在相对的两点温度相同。
+（{\it 圆环可以看成赤道，温度即为两点的气温}）
 
 \newpage
 
@@ -428,13 +508,15 @@ $$a_0x^{2n+1}+a_1x^{2n}+\ldots+a_{2n}x+a_{2n+1}=0.$$
   \item  计算极限
 	\begin{enumerate}[(1)]
 % 	  \setlength{\itemindent}{1cm}
-	  \item $\limx{+\infty}(\sqrt{x^2+x-1}-\sqrt{x^2+x-1})$ 
+	  \item $\limx{+\infty}(\sqrt{x^2+x+1}-\sqrt{x^2+x-1})$ 
 	  \item $\limx{0}\df{\sqrt[3]{1+x}-1}{x}$ 
 	  \item $\limx{0}\df{\sqrt{1-\cos x^2}}{1-\cos x}$ 
 	  \item $\limx{0}\df{1-\cos x\cos 2x}{1-\cos x}$
 	  \item $\limx{\pi /4}(\tan x)^{\tan 2x}$ 
 	  \item $\limx{0}\left(2e^{\frac{x}{x+1}}-1\right)^{\frac{x^2+1}{x}}$ 
-	  \item $\limx{+\infty}\left(\sqrt{x^2+x}-\sqrt[3]{x^3+x^2}\right)$ 
+	  \item $\limx{+\infty}\left(\sqrt{x^2+x}-\sqrt[3]{x^3+x^2}\right)=
+	  \limx{+\infty}x\left(1+\df1x\right)^{\df13}\left[\left(
+	  1+\df1x\right)^{\df16}-1\right]=\df16$ 
 	  \item $\limx{+\infty}\left(\df{x^2-1}{x^2+1}\right)^{x^2}$
 	  \item $\limx{0}\left(\df{a^x+b^x+c^x}{3}\right)^{1/x}\,(a,b,c>0)$ 
 	  \item $\limx{0}\left(\df{a^{x+1}+b^{x+1}+c^{x+1}}{a+b+c}\right)^{1/x}
