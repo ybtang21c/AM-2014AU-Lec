@@ -1,0 +1,300 @@
+\begin{center}
+	{\Large\bf 数列极限、级数与函数极限测验}
+	
+	(时间：120分钟)
+\end{center}
+
+{\bf 一、计算以下极限（每题4分）：}
+\begin{enumerate}[(1)]
+  \setlength{\itemindent}{1cm}
+  \item $\limn\sqrt[n]{a^n+b^n},\;(a,b>0)$
+  \item $\limn\df{1+2!+\ldots+n!}{n!}$
+  \item $\limn\left[\df1{1\cdot 2\cdot 3}+\df1{2\cdot 3\cdot 4}+\ldots+
+  \df1{n\cdot (n+1)\cdot (n+2)}\right]$
+  \item $\limn\df{n^5}{2^n}$
+  \item $\limn\df{1+2^3+\ldots+n^3}{n^4}$
+%   \item $\limx{0}\df{\tan x-\sin x-x^3}{\sin^3x}$
+  \item $\limx{\infty}\left[\df{x^2}{(x-a)(x-b)}\right]^x$
+  \item $\limx{+\infty}(\sqrt{x^2+x}-\sqrt[3]{x^3+x^2})$ 
+  \item $\limx{0}\df{1-\cos x\cos 2x}{x^2}$
+%   \item $\limx{+\infty}\df{\ln(2+3e^{3x})}{\ln(3+2e^{2x})}$
+  \item $\limx{0}\df1{x^3}\left[\left(\df{2+\cos x}3\right)^x-1\right]$
+%   \item $\limx{\pi/4}(\tan x)^{\tan 2x}$
+  \item $\limx{0}\df{\arctan x-\sin x}{x^3}$
+\end{enumerate}
+
+{\bf 二、判定以下级数的敛散性（每题4分）：}
+\begin{enumerate}[(1)]
+  \setlength{\itemindent}{1cm}
+  \item $\sum\limits_{n=2}^{\infty}\df1{\ln n^{\ln n}}$
+  \item $\sumn\sin(\pi\sqrt{n^2-1})$
+  \item $\sumn(-1)^n\df{n^{n+\frac1n}}{\left(n+\df1n\right)^n}$
+  \item $\sumn\df{n!}{{(\sqrt5+1)}{(\sqrt5+2)}\ldots{(\sqrt5+n)}}$
+  \item $\sumn\df{2^nn!}{n^n}$
+\end{enumerate}
+
+{\bf 三、用定义证明以下极限（每题5分）：}
+\begin{enumerate}[(1)]
+  \setlength{\itemindent}{1cm}
+  \item $(n+1)^k-n^k\to 0,\;(n\to\infty)$，其中$0<k<1$
+  \item $\limx{1}\df1{x}=1$
+\end{enumerate}
+
+{\bf 四、证明（6分）：}设$a_n>0\;(n=1,2,\ldots)$，记$r_n=\df{a_{n+1}}{a_n}$，
+\begin{enumerate}[(1)]
+  \setlength{\itemindent}{1cm}
+  \item 若对充分大的$n$，总有$r_n\geq 1$，则$\sumn a_n$发散；
+  \item 若存在常数$r\in(0,1)$，使对充分大的$n$，总有$r_n\leq r$，则$\sumn a_n$收敛。
+\end{enumerate}
+
+{\bf 五、证明（12分）：}
+\begin{enumerate}[(1)]
+  \setlength{\itemindent}{1cm}
+  \item 方程$x^n+x^{n-1}+\ldots+x=1\;(n=2,3,\ldots)$在$\left(\df12,1\right)$
+  内有且仅有一个实根；
+  \item 记（1）中的实根为$x_n$，证明$\limn x_n$存在，并求此极限。
+\end{enumerate}
+
+% {\bf 五、证明（6分）：}已知函数$f(x)$在$\mathbb{R}$上连续，且$\limx{\infty}f(x)$存在，
+% 则$f(x)$在$\mathbb{R}$上有界。
+% 
+% {\bf 六、证明（6分）：}$f(x)=xD(x)$只在$x=0$处连续，其中$D(x)$为Dirichlet函数。
+
+{\bf 六、证明（12分）：}
+\begin{enumerate}[(1)]
+  \setlength{\itemindent}{1cm}
+  \item 若$a_n>0\,(n\in\mathbb{N})$，$\limn a_n=a$，
+  则$\limn\sqrt{a_n}=\sqrt a$；
+  \item 若$a_1>0$，$a_{n+1}=a_n+\df 1{a_n},\,(n=1,2,\ldots)$，则
+  $$\limn\df{a_n}{\sqrt{2n}}=1.$$
+\end{enumerate}
+
+\newpage
+
+\begin{center}
+	{\Large\bf 解答与评分标准}\ps{1.若解法与参考答案不同，参照本评分标准的特点分段给分\\
+	2.计算题只写结果，缺少计算过程，最多得1分}
+\end{center}
+
+{\bf 一、解：}
+\begin{enumerate}[(1)]
+  \setlength{\itemindent}{1cm}
+  \item 不妨设$a\leq b$，则
+  $$b<\sqrt[n]{a^n+b^n}\leq\sqrt[n]2b,\eqno{{(+2\;\mbox{分})}}$$
+  由于$\sqrt[n]2\to 1(n\to\infty)$，故由夹逼定理，原式$=b=\max\{a,b\}$.\hfill{{(+2分)}}
+  \item 由于
+  $$\limn\df{(n+1)!}{(n+1)!-n!}=\limn\df{(n+1)!}{n\cdot
+  n!}=\limn\df{n+1}{n}=1,\eqno{{(+2\;\mbox{分})}}$$ 
+  故由Stolz定理，原式$=1$.\hfill{{(+2分)}}
+  \item 
+  \begin{align}
+  	\mbox{原式}&=\df12\limn\sum\limits_{k=1}^n\left(\df 1n-\df 2{n+1}+\df
+  	1{n+2}\right)\tag{{+2\;\mbox{分}}}\\ 
+  	&=\df12\limn\left(1-2\cdot\df 1{2}+\df 13+\df 12-2\cdot
+  	\df13+\df14+\ldots+\df 1n-2\cdot\df 1{n+1}+\df 1{n+2}\right)\notag\\
+  	&=\df12\limn\left(1-\df12-\df1{n+1}+\df 1{n+2}\right)=\df14\tag{{+2\;\mbox{分}}}
+  \end{align}
+  \item
+  记$a_n=\df{n^5}{2^n}$，显然$a_n>0\,(n\in\mathbb{N})$。又当$n>\df{1}{\sqrt[5]2-1}$时，
+  $$\df{a_{n+1}}{a_n}=\left(\df{n+1}{n}\right)^5\cdot\df 12<1,\eqno{(+2\;\mbox{分})}$$
+  故由单调有界原理，$\{a_n\}$收敛，不妨设其极限为$a$。对递推式
+  $$a_{n+1}=\left(\df{n+1}{n}\right)^5\cdot\df 12a_n$$
+  两端同时取极限，可得$a=\df 12a$，从而可知$\limn a_n=a=0$。\hfill{{(+2分)}}
+  \item 由Stolz定理，
+  \begin{align}
+  	\mbox{原式}&=\limn\df{n^3}{n^4-(n-1)^4}\tag{{+2\;\mbox{分}}}\\
+  	&=\limn\df{n^3}{C_4^1n^3-C_4^2n^2+C_4^3n-1}=\df14\tag{{+2\;\mbox{分}}}
+  \end{align}
+%   \item 
+%   \begin{align}
+%   	\mbox{原式}&=\limx{0}\df{\tan x(1-\cos x)-x^3}{x^3}
+%   	=\limx{0}\df{\tan x(1-cos x)}{x^3}-1\tag{{+2\;\mbox{分}}}\\
+%   	&=\limx{0}\df{\df12x^3}{x^3}-1=-\df12\tag{{+2\;\mbox{分}}}
+%   \end{align}
+  \item
+  \begin{align}
+  	\mbox{原式}&=\limx{\infty}\left\{\left[1+\df{(a-b)x+ab}
+  	{(x-a)(x+b)}\right]^{\frac{(x-a)(x+b)}{(a-b)x+ab}}\right\}
+  	^\frac{[(a-b)x+ab]x}{(x-a)(x+b)\tag{{+2\;\mbox{分}}}}\\
+  	&=\exp\left\{\df{[(a-b)x+ab]x}{(x-a)(x+b)}\ln\left[
+  	1+\df{(a-b)x+ab}{(x-a)(x+b)}\right]^{\frac{(x-a)(x+b)}
+  	{(a-b)x+ab}}\right\}=e^{a-b}\tag{{+2\;\mbox{分}}}
+  \end{align}
+  \item 
+  \begin{align}
+  	\mbox{原式}&=\limx{+\infty}(x^3+x^2)^{\frac13}
+  	\left[\left(\df{x+1}x\right)^{\frac16}-1\right]\tag{{+1\;\mbox{分}}}\\
+  	&=\limx{+\infty}\left(1+\df1x\right)^{\frac13}\df16
+  	\ln\left(\df{x+1}x\right)^x\tag{{+2\;\mbox{分}}}\\
+  	&=\df16\tag{{+1\;\mbox{分}}}
+  \end{align}
+  \item
+  \begin{align}
+  	\mbox{原式}&=\limx{0}\df{(1-\cos x)+\cos
+  	x(1-\cos2x)}{x^2}\tag{{+2\;\mbox{分}}}\\
+  	&=\limx{0}\df{1-\cos x}{x^2}+
+  	\limx{0}\cos x\df{1-\cos2x}{x^2}
+  	=\df12+\limx{0}\df{2x^2}{x^2}=\df52\tag{{+2\;\mbox{分}}}
+  \end{align}
+%   \item
+%   \begin{align}
+%   	\mbox{原式}&=\limx{+\infty}\df{3+\ln(2e^{-3x}+1)}
+%   	{2+\ln(3e^{-2x}+1)}=\df32\tag{{+4\;\mbox{分}}}
+%   \end{align}
+  \item
+  \begin{align}
+  	\mbox{原式}&=\limx{0}\df1{x^3}\left[\exp\left(
+  	x\ln\df{2+\cos x}{3}\right)-1\right]\notag\\
+  	&=\limx{0}\df{x\ln\df{2+\cos x}3}{x^3}\tag{{+1\;\mbox{分}}}\\
+  	&=\limx{0}\df{\cos x-1}{3x^2}\tag{{+1\;\mbox{分}}}\\
+  	&=-\df16\tag{{+2\;\mbox{分}}}
+  \end{align}
+%   \item
+%   \begin{align}
+%   	\mbox{原式}&=\limx{\pi/4}[1-(1-\tan x)]^{\frac1{1-\tan
+%   	x}(1-\tan x){\tan2x}}\tag{{+2\;\mbox{分}}}\\
+%   	&=\limx{\pi/4}\exp\left\{\df{2\tan x}{1+\tan x}
+%   	\ln[1-(1-\tan x)]^{\frac1{1-\tan x}}\right\}=e\tag{{+2\;\mbox{分}}}
+%   \end{align}
+  \item 令$y=\arctan x$
+  \begin{align}
+  	\mbox{原式}&=\lim\limits_{y\to 0}\df{y-\df
+  	y{\sqrt{1+y^2}}}{y^3}\tag{{+2\;\mbox{分}}}\\
+  	&=\lim\limits_{y\to 0}\df{(\sqrt{1+y^2}-1)}{y^2\sqrt{1+y^2}}
+  	=\lim\limits_{y\to 0}\df1{\sqrt{1+y^2}+1}=\df12\tag{{+2\;\mbox{分}}}
+  \end{align}
+\end{enumerate}
+
+{\bf 二、解：}
+\begin{enumerate}[(1)]
+  \setlength{\itemindent}{1cm}
+  \item 当$n>e^{e^2}$时，级数各项均非负，且
+  $$\df1{\ln n^{\ln n}}=\df1{n^{\ln\ln n}}<\df1{n^2}.$$
+  由比较判别法，因为$\sumn\df1{n^2}$收敛，故原级数收敛。\hfill{{(+4分)}}
+  \item 
+  $$\sin(\pi\sqrt{n^2-1})=(-1)^{n+1}\sin(n-\sqrt{n^2-1})\pi
+  =(-1)^{n+1}\sin\df{\pi}{n+\sqrt{n^2-1}},$$
+  注意到$\left\{\sin\df{\pi}{n+\sqrt{n^2-1}}\right\}$单调递减趋于零，
+  故由交错级数的Leibniz判别法，原级数收敛。又
+  \hfill{{(+2分)}}
+  $$n\sin\df{\pi}{n+\sqrt{n^2-1}}\to\df{\pi}2,\;(n\to\infty),$$
+  故由p-判别法，$\sumn|\sin(\pi\sqrt{n^2-1})|$发散。
+  综上，原级数是条件收敛的。\hfill{{(+2分)}}
+  \item
+  注意到
+  $$\limn\left(1+\df1{n^2}\right)^n=\limn\exp\left[\df1n
+  \ln\left(1+\df1{n^2}\right)^{n^2}\right]=1\eqno{(+2\;\mbox{分})}$$
+  故
+  $$\df{n^{n+\frac1n}}{\left(n+\df1n\right)^n}=\df{n^{\frac1n}}
+  {\left(1+\df1{n^2}\right)^n}\to 1,\;(n\to\infty).$$
+  原级数不满足级数收敛的必要条件，故发散。\hfill{{(+2分)}}
+  \item 注意到
+  $$\df{n!}{{(\sqrt5+1)}{(\sqrt5+2)}\ldots{(\sqrt5+n)}}
+  <\df{n!}{3\cdot4\cdot5\cdots(2+n)}=\df2{(n+1)(n+2)}<\df2{n^2},$$
+  级数$\sumn\df1{n^2}$收敛，由比较判别法，原级数收敛。\hfill{{(+4分)}}
+  \item 记$a_n=\df{2^nn!}{n^n},(n=1,2,\ldots)$，
+  $$\df{a_{n+1}}{a_n}=\df2{\left(1+\df1n\right)^n}\to\df2e,
+  \;(n\to\infty).$$
+  因为$2/e<1$，故由比值判别法，原级数收敛。\hfill{{(+4分)}}
+\end{enumerate}
+
+{\bf 三、证：}\ps{未用定义证明不得分！}
+\begin{enumerate}[(1)]
+  \setlength{\itemindent}{1cm}
+  \item 对$\forall\e>0$，令$N=\e^{\frac1{k-1}}$，则对$\forall n>N$，
+  有\hfill{{(+3分)}}
+  $$|(n+1)^k-n^k|=n^k\left[\left(1+\df1n\right)^k-1\right]
+  <n^k\left(1+\df1n-1\right)=\df1{n^{1-k}}<\df1{N^{1-k}}=\e,$$
+  即证。\hfill{{(+2分)}}
+  \item 对$\forall\e>0$，令$\delta=\min\{1/2,\e\}$，则对$0<|x-1|<\delta$，
+  有\hfill{{(+3分)}}
+  $$\left|\df1{x}-1\right|=\df{|x-1|}{|x|}<\delta\leq\e,$$
+  即证。\hfill{{(+2分)}}
+\end{enumerate}
+
+{\bf 四、证：}
+\begin{enumerate}[(1)]
+  \setlength{\itemindent}{1cm}
+  \item 由已知，存在$N\in\mathbb{N}$，对$\forall n>N$，都有$r_n\geq1$，从而
+  $$a_n\geq a_{n-1}\geq\ldots\geq a_N.\eqno{(+2\;\mbox{分})}$$
+  由数列极限的保号性，易知$\{a_n\}$不可能以$0$为极限，不满足级数收敛的必要条件，故原级数发散。
+  \hfill{{(+1分)}}
+  \item 由已知，存在$N\in\mathbb{N}$，对$\forall n>N$，都有$r_n\leq r$，从而
+  $$a_n<ra_{n-1}<\ldots<r^{n-N}a_N.\eqno{(+2\;\mbox{分})}$$
+  当$r<1$时，几何级数$\sum\limits_{n=N}^{\infty}r^{n-N}a_N$收敛，故
+  由比较判别法，原级数收敛。\hfill{{(+1分)}}
+\end{enumerate}
+
+{\bf 五、证：}
+\begin{enumerate}[(1)]
+  \setlength{\itemindent}{1cm}
+  \item 设
+  $$P_n(x)=x^n+x^{n-1}+\ldots+x-1,\;(n=2,3,\ldots).$$
+  注意到$P_n(x)$在$\left[\df12,1\right]$上连续，且$P_n(1)=n-1>0$，
+  $$P_n\left(\df12\right)=\df1{2^n}+\df1{2^{n-1}}+\ldots+\df12-1<0,$$
+  故由介值定理，必存在$x_n\in\left(\df12,1\right)$，使得$P_n(x_n)=0$。\hfill{{(+3分)}}
+  
+  又注意到$P_n(x)$在$\left(\df12,1\right)$内是严格单调递增的，故以上的$x_n$唯一。
+  \hfill{{(+2分)}}
+  \item 由（1）可知，$0<\df12<x_n<1,\;n=2,3,\ldots$。又由$P_n(x_n)=
+  P_{n+1}(x_{n+1})=0$，
+  $$P_n(x_n)-P_n(x_{n+1})=(x_n^n+x_n^{n-1}+\ldots+x_n-1)
+  -(x_{n+1}^n+x_{n+1}^{n-1}+\ldots+x_{n+1}-1)=x_{n+1}^{n+1}>0,$$
+  由$P_n(x)$的单调性可知$\{x_n\}$是单调递减的。由单调有界原理，
+  ${x_n}$收敛。\hfill{{(+4分)}}
+  
+  设$a=\limn x_n$。注意到$n>2$时，$0<x_n<x_2<1$，所以$0<x_n^n<x_2^n$，由夹逼定理可知，
+  $\limn x_n^n=0$。又等式\ps{由$0<x_n<1$直接推出$\limn x_n^n=0$，本步不得分！}
+  $x_n^n+x_n^{n-1}+\ldots+x_n=1$
+  即为
+  $$\df{x_n(1-x_n^n)}{1-x_n}=1,$$
+  两边同时取极限，可得$\df a{1-a}=1$，进而解得$a=\df12$，即为所求。\hfill{{(+3分)}}
+ \end{enumerate}
+ 
+% {\bf 五、证：}由$\limx{\infty}f(x)$存在，可知存在$M_1>0$和$X>0$，对任意的$|x|>X$，
+% $$|f(x)|\leq M_1.\eqno{(+2\;\mbox{分})}$$
+% 又$f(x)$在$\mathbb{R}$上连续，故也在$[-X,X]$上连续，从而在$[-X,X]$上有界，也即存在
+% $M_2>0$，对任意$x\in[-X,X]$，
+% $$|f(x)|\leq M_2.\eqno{(+2\;\mbox{分})}$$
+% 令$M=\max\{M_1,M_2\}$，则对任意$x\in\mathbb{R}$，都有$|f(x)|\leq M$，
+% 即证。\hfill{{(+2分)}}
+% 
+% \bigskip
+% {\bf 六、证：}先证$xD(x)$在$x=0$处连续。注意到$f(0)=0$，故只需证明$\limx{0}xD(x)=0$。
+% 事实上，对$\forall\e>0$，取$\delta=\e$，则对任意$0<|x|<\delta$，都有
+% $$|xD(x)|\leq|x|<\delta=\e.$$
+% 即证。\hfill{{(+3分)}}
+% 
+% 下证对任意$x_0\ne 0$，$xD(x)$均不连续。事实上，若取$\{x_n^{(1)}\},\{x_n^{(2)}\}$
+% 分别为趋于$x_0$的一个有理数列和一个无理数列，则
+% $$\limn f(x_n^{(1)})=\limn x_n^{(1)}=x_0,$$
+% $$\limn f(x_n^{(2)})=\limn 0=0$$
+% 故由Heine定理，$xD(x)$在$x_0$处极限不存在，从而不连续。\hfill{{(+3分)}}
+
+% \bigskip
+{\bf 六、证：}
+\begin{enumerate}[(1)]
+  \setlength{\itemindent}{1cm}
+  \item 由极限的保号性可知，$a\geq 0$。\hfill{{(+1分)}}
+
+若$a=0$。对$\forall\e>0$，令$\e_1=\e^2$。由$\limn a_n=0$，对$\e_1$，$\exists
+N>0$，对$\forall n>N$，有 $$|a_n-0|=a_n<\e_1,$$
+从而
+$$|\sqrt{a_n}-0|=\sqrt{a_n}<\sqrt{\e_1}=\e,$$
+也即$\limn\sqrt{a_n}=0=\sqrt a$。\hfill{{(+2分)}}
+
+若$a>0$。由$\limn a_n=a$，对$\forall\e>0$，$\exists N>0$，对$\forall n>N$，有
+$$|a_n-a|<\e,$$
+进而
+$$|\sqrt{a_n}-\sqrt a|=\df{|a_n-a|}{\sqrt{a_n}+\sqrt a}
+<\df {|a_n-a|}{\sqrt a}<\df 1{\sqrt a}\e,$$
+从而$\limn\sqrt{a_n}=\sqrt a$。\hfill{{(+3分)}}
+  \item 显然$\{a_n\}$为严格单调递增的正数列。假设其收敛于$a$，在递推公式两边取极限可得
+$$a=a+\df1a,$$
+该方程无解，故假设不成立。由此可知$\{a_n\}$必严格单调递增趋于$+\infty$，也即
+$$\limn\df{1}{a_n}=0.\eqno{(+3\;\mbox{分})}$$
+从而，由Stolz定理
+$$\limn\df{a_n^2}{2n}=\limn\df{a_{n+1}^2-a_n^2}{2}
+=\df12\limn\left(2+\df1{a_n^2}\right)=1.$$
+再由（1）的结论，即证。\hfill{{(+3分)}}
+\end{enumerate}
